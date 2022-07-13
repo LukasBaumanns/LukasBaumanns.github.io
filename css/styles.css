@@ -4077,7 +4077,7 @@ textarea.form-control-lg {
 
 .navbar-text {
   padding-top: 0.5rem;
-  padding-bottom: -50rem;
+  padding-bottom: 0.5rem;
 }
 
 .navbar-collapse {
