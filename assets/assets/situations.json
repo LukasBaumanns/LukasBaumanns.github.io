@@ -1,0 +1,34 @@
+[
+    {
+        "before": "Ein quadratischer Küchenboden soll mit schwarzen und weißen Fliesen ausgelegt werden. Die Fliesen sollen so auf dem Boden platziert werden, dass in jeder Ecke eine schwarze Fliese liegt, um jede schwarze Fliese herum nur weiße Fliesen liegen und die Anzahl der schwarzen Fliesen so groß wie möglich ist (auf dem Bild sind zwei Beispiele für eine solche Auslegung zu sehen).\r\n\r\nWie viele weiße Fliesen werden benötigt, wenn 25 schwarze Fliesen verwendet werden?",
+        "after": "Stelle, basierend auf dieser Situation, möglichst viele mathematische Aufgaben."
+    },
+    {
+        "before": "Ein quadratischer Küchenboden soll mit schwarzen und weißen Fliesen ausgelegt werden. Die Fliesen sollen so auf dem Boden platziert werden, dass in jeder Ecke eine schwarze Fliese liegt, um jede schwarze Fliese herum nur weiße Fliesen liegen und die Anzahl der schwarzen Fliesen so groß wie möglich ist (auf dem Bild sind zwei Beispiele für eine solche Auslegung zu sehen).",
+        "after": "Stelle, basierend auf dieser Situation, möglichst viele mathematische Aufgaben."
+    },
+    {
+        "before": "Ein quadratischer Küchenboden soll mit schwarzen und weißen Fliesen ausgelegt werden. Die Fliesen sollen so auf dem Boden platziert werden, dass in jeder Ecke eine schwarze Fliese liegt, um jede schwarze Fliese herum nur weiße Fliesen liegen und die Anzahl der schwarzen Fliesen so groß wie möglich ist (auf dem Bild sind zwei Beispiele für eine solche Auslegung zu sehen).\r\n\r\nWie viele weiße Fliesen werden benötigt, wenn 25 schwarze Fliesen verwendet werden?",
+        "after": "Stelle, basierend auf dieser Situation, sowohl leichte, moderate als auch schwierige mathematische Aufgaben und kennzeichne jeweils, welche Schwierigkeiten die einzelnen Aufgaben besitzen."
+    },
+    {
+        "before": "Ein quadratischer Küchenboden soll mit schwarzen und weißen Fliesen ausgelegt werden. Die Fliesen sollen so auf dem Boden platziert werden, dass in jeder Ecke eine schwarze Fliese liegt, um jede schwarze Fliese herum nur weiße Fliesen liegen und die Anzahl der schwarzen Fliesen so groß wie möglich ist (auf dem Bild sind zwei Beispiele für eine solche Auslegung zu sehen).",
+        "after": "Stelle, basierend auf dieser Situation, sowohl leichte, moderate als auch schwierige mathematische Aufgaben und kennzeichne jeweils, welche Schwierigkeiten die einzelnen Aufgaben besitzen."
+    },
+    {
+        "before": "Gegeben ist die folgende Abbildung eines Fünfecks mit dessen Diagonalen.\r\n\r\nWie groß ist \u03B1?",
+        "after": "Stelle, basierend auf dieser Situation, möglichst viele mathematische Aufgaben."
+    },
+    {
+        "before": "Gegeben ist die folgende Abbildung eines Fünfecks.",
+        "after": "Stelle, basierend auf dieser Situation, möglichst viele mathematische Aufgaben."
+    },
+    {
+        "before": "Gegeben ist die folgende Abbildung eines Fünfecks mit dessen Diagonalen.\r\n\r\nWie groß ist \u03B1?",
+        "after": "Stelle, basierend auf dieser Situation, sowohl leichte, moderate als auch schwierige mathematische Aufgaben und kennzeichne jeweils, welche Schwierigkeiten die einzelnen Aufgaben besitzen."
+    },
+    {
+        "before": "Gegeben ist die folgende Abbildung eines Fünfecks.",
+        "after": "Stelle, basierend auf dieser Situation, sowohl leichte, moderate als auch schwierige mathematische Aufgaben und kennzeichne jeweils, welche Schwierigkeiten die einzelnen Aufgaben besitzen."
+    }
+]
