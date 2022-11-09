@@ -11506,3 +11506,18 @@ font-size: 1.5em;
 font-weight: bold;
 margin: .83em 0;
 }
+
+imp {
+  width: 100%;
+  height: auto;
+  --padding: 10px;
+  background-color: #677C98;
+  float: left;
+  padding: var(--padding);
+  border: 2px solid #677C98;
+  
+  box-shadow: inset 0 0 0 var(--padding) #677C98;
+  color: #f8f9fa;
+  line-height: .4;	
+
+}
