@@ -71729,8 +71729,7 @@ A.jz.prototype={}
 A.Ja.prototype={
 K(a){return new A.yJ(B.HG,"Problem Posing Studie",A.anp(null,B.hH,B.k,null),!1,null)}}
 A.Jb.prototype={
-K(a){window.location.href="posing.html"
-return new A.Ag(A.aCt(A.FO(A.a0g(new A.a3Z(this),this.wa(a),t.SW),null,null)),null)},
+K(a){return new A.Ag(A.aCt(A.FO(A.a0g(new A.a3Z(this),this.wa(a),t.SW),null,null)),null)},
 Cr(a){return this.a9V(a)},
 a9V(a){var s=0,r=A.H(t.N),q,p,o,n
 var $async$Cr=A.I(function(b,c){if(b===1)return A.E(c,r)
