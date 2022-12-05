@@ -21389,7 +21389,8 @@ ah3:function ah3(a){this.a=a},
 ah0:function ah0(a){this.a=a},
 agX:function agX(a,b){this.a=a
 this.b=b},
-ah4:function ah4(a){this.a=a},
+ah4:function ah4(a,b){this.a=a
+this.b=b},
 agY:function agY(a){this.a=a},
 agW:function agW(a,b){this.a=a
 this.b=b},
@@ -71876,12 +71877,12 @@ if(s!=null)s.a2(0)
 s=this.r
 if(s!=null)s.a2(0)
 this.aA()},
-K(a){var s,r,q=this,p=null,o="checkboxes",n=A.V5(p,new A.ah2(),t.YN,t.yn),m=A.eH(A.b9(q.a.d.h(0,"before")),p,p,p,B.b8,p,p),l=q.a,k=l.c
-k=A.arE(p,p,new A.wg(k,p,p))
-l=A.eH(A.b9(l.d.h(0,"after")),p,p,p,B.b8,p,p)
-s=q.a.d.ab(0,o)?A.acC(J.no(t.j.a(q.a.d.h(0,o)),new A.ah3(q),t.Ih).dN(0),B.dO,0):A.eu(p,p,p,p,p,p,p,p,p)
+K(a){var s,r,q=this,p=null,o="checkboxes",n=A.V5(p,new A.ah2(),t.YN,t.yn),m=q.a.d.ab(0,o),l=A.eH(A.b9(q.a.d.h(0,"before")),p,p,p,B.b8,p,p),k=q.a,j=k.c
+j=A.arE(p,p,new A.wg(j,p,p))
+k=A.eH(A.b9(k.d.h(0,"after")),p,p,p,B.b8,p,p)
+s=m?A.acC(J.no(t.j.a(q.a.d.h(0,o)),new A.ah3(q),t.Ih).dN(0),B.dO,0):A.eu(p,p,p,p,p,p,p,p,p)
 r=t.p
-return new A.bx(B.A,A.et(A.a([new A.bx(B.A,n,p),B.cy,A.et(A.a([B.OP,new A.bx(B.fQ,m,p),B.cy,new A.or(k,p,B.lS,p),B.cy,new A.bx(B.fQ,l,p),s],r),B.B,B.L),B.cy,A.V5(p,new A.ah4(q),t.pC,t.QH)],r),B.B,B.L),p)}}
+return new A.bx(B.A,A.et(A.a([new A.bx(B.A,n,p),B.cy,A.et(A.a([B.OP,new A.bx(B.fQ,l,p),B.cy,new A.or(j,p,B.lS,p),B.cy,new A.bx(B.fQ,k,p),s],r),B.B,B.L),B.cy,A.V5(p,new A.ah4(q,m),t.pC,t.QH)],r),B.B,B.L),p)}}
 A.ah6.prototype={
 $1(a){var s
 if(a instanceof A.nL){s=this.a
@@ -71930,7 +71931,7 @@ A.ah4.prototype={
 $2(a,b){var s,r,q=null,p=this.a,o=A.abg(!0,B.be,!1,q,p.d,q,q,q,2,B.D9,!0,q,!0,q,!1,q,q,q,q,q,q,q,10,q,!1,"\u2022",new A.agY(p),q,q,q,!1,q,q,B.e2,q,q,q,q,q,q,q,B.aY,q,B.KK,q,q,q),n=p.x,m=t.p
 n=A.f0(A.a([B.dB,new A.bx(B.A,A.eH(A.aAA(n,"de","Eine Aufgabe eingereicht",""+n+" Aufgaben eingereicht","Keine Aufgabe eingereicht"),q,q,q,B.Mz,q,q),q)],m),B.B,B.L)
 s=A.as6(A.f0(A.a([B.CU,B.JS,A.eH(p.e!=null?"Skizze hinzugef\xfcgt":"Skizze hinzuf\xfcgen",q,q,q,q,q,q)],m),B.B,B.b3),new A.agZ(p,a),q)
-if(p.y!=null)r=!p.z||p.e!=null
+if(!this.b||p.y!=null)r=!p.z||p.e!=null
 else r=!1
 s=A.acC(A.a([s,A.xw(B.OG,r||p.w?new A.ah_(p,a):q)],m),B.Qx,10)
 p=p.e
