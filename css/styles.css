@@ -89,10 +89,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.dark-mode {
-  background-color: var(--bs-body-color);
-  color: var(--bs-body-bg);
-}
 
 
 hr {
@@ -11526,4 +11522,9 @@ imp {
   color: #BBC6D3;
   line-height: .4;	
 
+}
+
+@media (prefers-color-scheme: dark) {
+  html { filter: invert(100%); }
+  img { filter: invert(100%); }
 }
