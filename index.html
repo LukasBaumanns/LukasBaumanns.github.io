@@ -47,7 +47,7 @@
                     </h1>
                     <div class="subheading mb-5">
                         <p>Wissenschaftlicher Mitarbeiter </p>
-                        <p><a href="posing.html" style="color:#FF0000">Fortsetzen</a></p>
+                        <!-- <p><a href="posing.html" style="color:#FF0000">Fortsetzen</a></p> -->
                     </div>
                     <ul class="fa-ul mb-5">
                         <li>
@@ -78,16 +78,50 @@
                         </li>
                     </ul> -->
                     <ul class="fa-ul mb-5">
-                    <picture>
+                    <!-- <picture>
                         <source 
-                          media="(min-width: 700px)"
+                          media="(min-width: 700px)" 
                           srcset="/assets/img/forschungsinhalte.png" width="675" height=auto>
                           <source 
                           media="(min-width: 465px)"
-                          srcset="/assets/img/forschungsinhalteklein.png"width="412" height=auto>                      
+                          srcset="/assets/img/forschungsinhalteklein.png" width="412" height=auto>                      
                         <img 
                           src="/assets/img/forschungsinhaltekleinklein.png" width="225" height=auto>
-                    </picture>
+                    </picture> -->
+
+                    <picture>
+                        <source
+                            media="(min-width: 700px) and (prefers-color-scheme: light)"  
+                            srcset="/assets/img/forschungsinhalte.png 675w" width="675" height=auto>
+
+                        <source
+                            media="(min-width: 465px) and (prefers-color-scheme: light)"  
+                            srcset="/assets/img/forschungsinhalteklein.png 675w" width="412" height=auto>
+  
+                        <source
+                          media="(max-width: 464px) and (prefers-color-scheme: light)"  
+                          srcset="/assets/img/forschungsinhaltekleinklein.png 675w" width="225" height=auto>
+
+
+                      
+                        <source
+                            media="(min-width: 700px) and (prefers-color-scheme: dark)"  
+                            srcset="/assets/img/forschungsinhalteblack.png 675w" width="675" height=auto>
+
+                        <source
+                            media="(min-width: 465px) and (prefers-color-scheme: dark)"  
+                            srcset="/assets/img/forschungsinhaltekleinblack.png 675w" width="412" height=auto>
+  
+                        <source
+                          media="(max-width: 44px) and (prefers-color-scheme: dark)"  
+                          srcset="/assets/img/forschungsinhaltekleinkleinblack.png 675w" width="225" height=auto>
+
+                      
+                        
+                        <img alt="alt text" src="https://some.cdn/img/light.jpg" loading="lazy" />
+                  </picture>
+
+                      
                     </ul>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.researchgate.net/profile/Lukas-Baumanns" target="_blank"><i class="fab fa-researchgate"></i></a>
