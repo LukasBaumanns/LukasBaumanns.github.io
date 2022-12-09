@@ -11549,4 +11549,14 @@ imp {
   .container{
     background: #292929;
   }
+
+  a {
+    color: #677C98;
+  }
+
+  .form-check-input:checked {
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+
 }
