@@ -11565,6 +11565,7 @@ imp {
   .bg-primary {/*Hintegrund der Seitenleiste bei Nacht*/
     background-color: #202124 !important;
     border-right: 1px solid #BEC1C5;
+    border-bottom: 1px solid #BEC1C5;
 
   }
   
