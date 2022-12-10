@@ -11529,8 +11529,12 @@ imp {
 
 
 @media (prefers-color-scheme: dark) {
-  p,h1,h2,h3,h4,h5,li,h6,.subheading{
-    color: white;
+  p,h1,h3,h4,h5,li,h6,.subheading{
+    color: #BEC1C5;
+  }
+
+  h2{
+    color: #ffffff;
   }
 
   .only-dark{
@@ -11542,7 +11546,7 @@ imp {
   }
 
   body{
-    background: black; /*black*/ /*171F2A*/
+    background: #202124; /*black*/ /*171F2A*/
   }
 
   .container{
@@ -11550,29 +11554,32 @@ imp {
   }
 
   a {/*Linkfarbe bei Nacht*/
-    color: #4B9DF0; /*677C98*/ /*4B9DF0*/
+    color: #93B3F3; /*677C98*/ /*4B9DF0*/
   }
 
   .text-primary { /*Baumanns-Fargbe und Datum-Farbe bei Nacht*/
     --bs-text-opacity: 1;
-    color: #4B9DF0 !important;
+    color: #93B3F3 !important;
   }
 
   .bg-primary {/*Hintegrund der Seitenleiste bei Nacht*/
-    background-color: #0D1D34 !important;
+    background-color: #202124 !important;
+    border-right: 1px solid #BEC1C5;
+
   }
   
   imp {
     width: 100%;
     height: auto;
     --padding: 10px;
-    background-color: #0D1D34;
+    background-color: #202124;
     float: left;
     padding: var(--padding);
-    border: 2px solid #0D1D34;
-    
-    box-shadow: inset 0 0 0 var(--padding) #0D1D34;
-    color: #0D1D34;
+    border: 2px solid #202124;
+    border-top: 1px solid #BEC1C5;
+
+    box-shadow: inset 0 0 0 var(--padding) #202124;
+    color: #202124;
     line-height: .4;	
   
   }
