@@ -11566,13 +11566,13 @@ imp {
     width: 100%;
     height: auto;
     --padding: 10px;
-    background-color: #465261;
+    background-color: #0D1D34;
     float: left;
     padding: var(--padding);
-    border: 2px solid #465261;
+    border: 2px solid #0D1D34;
     
-    box-shadow: inset 0 0 0 var(--padding) #465261;
-    color: #BBC6D3;
+    box-shadow: inset 0 0 0 var(--padding) #0D1D34;
+    color: #0D1D34;
     line-height: .4;	
   
   }
