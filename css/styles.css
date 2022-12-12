@@ -33,7 +33,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #677C98;
+  --bs-primary: #677C98; /*Hauptfarbe in Blau*/
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -11528,7 +11528,7 @@ imp {
 }
 
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {/*Dark Mode*/
   p,h1,h3,h4,h5,li,h6,.subheading{
     color: #BEC1C5;
   }
