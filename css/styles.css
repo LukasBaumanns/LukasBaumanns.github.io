@@ -243,7 +243,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #8596AD;
+  color: #8596AD; /*Hover Color*/
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -338,7 +338,7 @@ label {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 10;
 }
 
 button:focus:not(:focus-visible) {
@@ -11556,6 +11556,9 @@ imp {
   a {/*Linkfarbe bei Nacht*/
     color: #93B3F3; /*677C98*/ /*4B9DF0*/
   }
+  a:hover {/*Linkfarbe bei Nacht*/
+    color: #7B90C5; /*677C98*/ /*4B9DF0*/
+  }
 
   .text-primary { /*Baumanns-Fargbe und Datum-Farbe bei Nacht*/
     --bs-text-opacity: 1;
@@ -11570,7 +11573,37 @@ imp {
     border-left: 1px solid #BEC1C5;
 
   }
-  
+  .button1 {/*Knopf zum Sortieren der Publikationsliste*/
+    background-color: #93B3F3 !important;
+    color: #202124 !important;
+
+  }
+  .button:hover {
+    background-color: #7B90C5 !important; /* Green */
+    color: white;
+    }
+
+    .btn-link:hover {
+      color: #7B90C5 !important;
+    }
+    .nav-link:hover, .nav-link:focus {
+      color: #7B90C5 !important;
+    }
+.page-link:hover {
+  color: #7B90C5 !important;
+}
+.page-link:focus {
+  color: #7B90C5 !important;
+}
+
+.social-icons .social-icon:hover {
+  background-color: #7B90C5 !important;
+  /* transform: scale(1.1) ;
+  transition:  0.1s ease-in-out; */
+
+}
+
+    
   imp {
     width: 100%;
     height: auto;
@@ -11589,3 +11622,4 @@ imp {
   
 
 }
+

@@ -349,14 +349,40 @@
             
             
             
-            <!--############################  -->
-            <div>
-                <p>Publikationsliste sortieren nach ... (jeweils doppelt klicken)</p>
-              <!-- The HTML for the buttons to sort the list -->
-              <button id="sort-year">Jahreszahl</button>
-              <button id="sort-topic">Thema</button>
-              <button id="sort-type">Publikationsart</button>
-            </div>
+<!--############################  -->
+
+<style>
+  .button1 {
+    background-color: #677C98; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    transition-duration: 0.15s;
+    border-radius: 50px
+  }
+  
+  .button:hover {
+  background-color: #8596AD; /* Green */
+  color: white;
+  }
+  </style>
+  
+
+<div>
+   Sortieren nach: 
+   <!-- The HTML for the buttons to sort the list -->
+   <button class="button button1" id="sort-year">Jahreszahl</button>
+   <button class="button button1" id="sort-topic">Thema</button>
+   <button class="button button1" id="sort-type">Publikationsart</button>
+   (jeweils doppelt klicken)
+  </div>
+
+
             
             
 <!-- The HTML for the list of publicatins -->
