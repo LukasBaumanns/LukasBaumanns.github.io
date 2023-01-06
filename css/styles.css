@@ -11589,6 +11589,7 @@ imp {
     .nav-link:hover, .nav-link:focus {
       color: #7B90C5 !important;
     }
+    
 .page-link:hover {
   color: #7B90C5 !important;
 }
@@ -11602,7 +11603,6 @@ imp {
   transition:  0.1s ease-in-out; */
 
 }
-
     
   imp {
     width: 100%;
