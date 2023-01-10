@@ -664,7 +664,7 @@
                   sortLists('data-type');
                 });
               
-                function sortList(dataAttribute) {
+              function sortList(dataAttribute) {
               // Get all the list items and subheadings
               var items = publicationss.querySelectorAll('li');
               var subheadings = publicationss.querySelectorAll('.subheading');
@@ -715,9 +715,7 @@
             
               // Remove all the existing list items and subheadings from the list
               subheadings.forEach(function(subheading) {publicationss.removeChild(subheading);});
-              items.forEach(function(item) {
-                publicationss.removeChild(item);
-              });
+              items.forEach(function(item) {publicationss.removeChild(item);});
             
               // Create a new array of list items sorted by the given data attribute
               var sortedItems = items.sort(function(a, b) {
