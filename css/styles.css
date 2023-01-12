@@ -33,6 +33,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
+  /* --bs-primary: #677C98; Hauptfarbe in Blau */
   --bs-primary: #677C98; /*Hauptfarbe in Blau*/
   --bs-secondary: #6c757d;
   --bs-success: #198754;
@@ -11526,6 +11527,26 @@ imp {
 .only-dark{
   display: none;
 }
+
+  .button1 {
+    background-color: #677C98; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    transition-duration: 0.15s;
+    border-radius: 50px
+  }
+  
+  .button:hover {
+  background-color: #8596AD; /* Green */
+  color: white;
+  }
+
 
 
 @media (prefers-color-scheme: dark) {/*Dark Mode*/
