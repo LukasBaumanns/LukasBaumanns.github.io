@@ -11525,6 +11525,8 @@ imp {
 
 }
 
+
+
 .only-dark{
   display: none;
 }
@@ -11552,7 +11554,7 @@ imp {
 
 @media (prefers-color-scheme: dark) {/*Dark Mode*/
   p,h1,h3,h4,h5,li,h6,.subheading{
-    color: #BEC1C5;
+    color: #BEC1C5;/*Graue Textfarbe*/
   }
 
   h2{
@@ -11582,7 +11584,7 @@ imp {
     color: #7B90C5; /*677C98*/ /*4B9DF0*/
   }
 
-  .text-primary { /*Baumanns-Fargbe und Datum-Farbe bei Nacht*/
+  .text-primary { /*Baumanns-Farbe und Datum-Farbe bei Nacht*/
     --bs-text-opacity: 1;
     color: #93B3F3 !important;
   }
@@ -11642,6 +11644,12 @@ imp {
   
   }
   
-
+  table td{ /* Tabellentitel-Farbe*/
+    color:#BEC1C5;
+  }
+  
+  table th{/* Tabelleninhalt-Farbe*/
+    color:#BEC1C5;
+  }
 }
 
