@@ -11444,7 +11444,10 @@ section.resume-section .resume-section-content {
 CSS for APA-Style Reference lists,
 COPY THE FOLLOWING STYLES INTO YOUR CSS:
 */
-
+td {
+  height: 20px;
+  vertical-align: top;
+}
 /*
 Sets any enclosing element (div/ul/ol/dl) with or within the following classes flush left
 */
