@@ -11504,6 +11504,21 @@ ul li {
   transform: translate(-50%, -0%);
 }
 
+.fa-li:hover {
+
+  color: var(--bs-primaryhover);
+}
+
+.fa-lii {
+  top: 0%;
+}
+
+.fa-lii:hover {
+
+  color: var(--bs-primaryhover);
+}
+
+
 /*
 The following items are OPTIONAL - Please READ:
 DEFINITION TERM styling:
@@ -11556,10 +11571,15 @@ imp {
     border-radius: 50px
   }
   
-  .button:hover {
+  .button1:hover {
   background-color: var(--bs-primaryhover); /* Green */
   color: white;
   }
+
+  .active1 {
+    background-color: var(--bs-primaryhover);
+  }
+
 
   /* Zwei Definitionen für die responsive Darstellung der Vortragsvideos */
   .auto-grid {

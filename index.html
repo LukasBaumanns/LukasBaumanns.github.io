@@ -491,8 +491,8 @@
                           <video width="300" height="100" controls autoplay>
                             <source src="/assets/img/eyetracking.mp4" type="video/mp4">
                           </video>
-                          <p> <a href="https://www.youtube.com/embed/fnmL8QmO3XM" targe ="_blank"> <i class="fa-brands fa-youtube fa-2xl"></i></a>
-                            <a href="https://www.researchgate.net/publication/372410380_Adaptive_strategy_use_in_pattern-recognition_of_first_graders_with_and_without_risk_of_developing_mathematical_difficulties_an_eye-tracking_study" targe ="_blank"> <i class="fa-solid fa-file-lines fa-2xl"></i></a></p>
+                          <p> <a href="https://www.youtube.com/embed/fnmL8QmO3XM" targe ="_blank"> <span class="fa-lii"><i class="fa-brands fa-youtube fa-2xl"></i></span></a>
+                            <a href="https://www.researchgate.net/publication/372410380_Adaptive_strategy_use_in_pattern-recognition_of_first_graders_with_and_without_risk_of_developing_mathematical_difficulties_an_eye-tracking_study" targe ="_blank"> <span class="fa-lii"><i class="fa-solid fa-file-lines fa-2xl"></i></span></a></p>
                       </span>
                       </div>  
                     </div>  
@@ -523,6 +523,25 @@
     }, 200);
   }
 </script>
+
+<!-- Skript, damit die Hover-Farbe bleibt nach Klick -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".button1");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        buttons.forEach(btn => {
+          btn.classList.remove("active1");
+        });
+        button.classList.add("active1");
+      });
+    });
+  });
+</script>
+
 
 
 <div><p> 
