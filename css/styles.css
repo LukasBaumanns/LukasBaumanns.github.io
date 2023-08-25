@@ -11499,6 +11499,8 @@ margin-bottom: 1em;
 ul li {
   margin: 15px 0;
 }
+
+/* Icons im ersten Abschnitt */
 .fa-li {
   top: 0%;
   transform: translate(-50%, -0%);
@@ -11717,6 +11719,13 @@ imp {
   transition:  0.1s ease-in-out; */
 
 }
+
+/* Icons im ersten Abschnitt */
+.fa-li:hover {
+
+  color: var(--bs-primaryhoverdark);
+}
+
     
   imp {
     width: 100%;
