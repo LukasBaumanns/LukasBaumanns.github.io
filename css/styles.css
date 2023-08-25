@@ -11580,7 +11580,7 @@ imp {
 
   /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
   .active1 {
-    background-color: var(--bs-primaryhover);
+    background-color: var(--bs-primaryhover) !important;
   }
 
 
