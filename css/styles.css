@@ -11560,7 +11560,7 @@ imp {
 }
 
   .button1 {
-    background-color: var(--bs-primary); /* Green */
+    background-color: var(--bs-primary) !important; /* Green */
     border: none;
     color: white;
     padding: 5px 15px;
@@ -11578,6 +11578,7 @@ imp {
   color: white;
   }
 
+  /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
   .active1 {
     background-color: var(--bs-primaryhover);
   }
@@ -11643,18 +11644,14 @@ imp {
 
   
 @media (prefers-color-scheme: dark) {/*Dark Mode*/
-  p,h3,h4,h5,li,h6,.subheading{
+  p,h4,h5,li,h6,.subheading{
     color: #BEC1C5;/*Graue Textfarbe*/
   }
 
-  h1,.subheading{
+  h1,h2,h3{
     color: #fff;/*Graue Textfarbe*/
   }
 
-
-  h2{
-    color: #ffffff;
-  }
 
   .only-dark{
     display: block;
@@ -11681,6 +11678,8 @@ imp {
 
   }
 
+  
+
   .text-primary { /*Baumanns-Farbe und Datum-Farbe bei Nacht*/
     --bs-text-opacity: 1;
     color: var(--bs-primarydark) !important;
@@ -11694,15 +11693,37 @@ imp {
     border-left: 1px solid #BEC1C5;
 
   }
-  .button1 {/*Knopf zum Sortieren der Publikationsliste*/
-    background-color: var(--bs-primarydark) !important;
-    color: #202124 !important;
-
-  }
   .button:hover {
     background-color: var(--bs-primaryhoverdark) !important; /* Green */
     color: white;
     }
+
+  .button1 {/*Knopf zum Sortieren der Publikationsliste*/
+    background-color: var(--bs-primarydark) !important;
+    color: #202124 !important;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    transition-duration: 0.15s;
+    border-radius: 50px
+
+
+  }
+
+    .button1:hover {
+      background-color: var(--bs-primaryhoverdark); 
+      color: white;
+      }
+    
+      /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
+      .active1 {
+        background-color: var(--bs-primaryhoverdark) !important;
+      }
+  
 
     .btn-link:hover {
       color: var(--bs-primaryhoverdark) !important;
@@ -11720,8 +11741,9 @@ imp {
 
   .social-icons .social-icon:hover {
   background-color: var(--bs-primarydark) !important;
-  /* transform: scale(1.1) ;
-  transition:  0.1s ease-in-out; */
+  /* transform: scale(1.1) ; */
+  /* transition:  0.15s ease-in-out; */
+  transition-duration: 0.15s;
 
   }
 
