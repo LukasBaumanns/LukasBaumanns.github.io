@@ -11643,9 +11643,14 @@ imp {
 
   
 @media (prefers-color-scheme: dark) {/*Dark Mode*/
-  p,h1,h3,h4,h5,li,h6,.subheading{
+  p,h3,h4,h5,li,h6,.subheading{
     color: #BEC1C5;/*Graue Textfarbe*/
   }
+
+  h1,.subheading{
+    color: #fff;/*Graue Textfarbe*/
+  }
+
 
   h2{
     color: #ffffff;
@@ -11706,25 +11711,25 @@ imp {
       color: var(--bs-primarydark) !important;
     }
     
-.page-link:hover {
+  .page-link:hover {
   color: var(--bs-primaryhoverdark) !important;
-}
-.page-link:focus {
+  }
+  .page-link:focus {
   color: var(--bs-primaryhoverdark) !important;
-}
+  }
 
-.social-icons .social-icon:hover {
+  .social-icons .social-icon:hover {
   background-color: var(--bs-primarydark) !important;
   /* transform: scale(1.1) ;
   transition:  0.1s ease-in-out; */
 
-}
+  }
 
-/* Icons im ersten Abschnitt */
-.fa-li:hover {
+  /* Icons im ersten Abschnitt */
+  .fa-li:hover {
 
-  color: var(--bs-primaryhoverdark);
-}
+  color: #fff;
+  }
 
     
   imp {
