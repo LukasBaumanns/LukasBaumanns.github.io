@@ -505,14 +505,34 @@
 
 <!--############################  --> 
 
+<!-- Skript für Doppelklick -->
+<script>
+  // Function to handle the first click and trigger the second click
+  function handleFirstClick(event) {
+    var target = event.target;
+
+    // Simulate the first click
+    target.click();
+
+    // Remove the event listener to prevent further clicks
+    target.removeEventListener('click', handleFirstClick);
+
+    // Re-add the event listener after a short delay
+    setTimeout(function() {
+      target.addEventListener('click', handleFirstClick);
+    }, 200);
+  }
+</script>
+
+
 <div><p> 
    <!-- Publikationsliste sortieren nach:  -->
    <h3 class="mb-0">Publikationsliste sortieren nach:</a></h3>
 
    <!-- The HTML for the buttons to sort the list -->
-   <button class="button button1" id="sort-type">Publikationsart</button>
-   <button class="button button1" id="sort-year">Jahreszahl</button>
-   <button class="button button1" id="sort-topic">Thema</button>
+   <button class="button button1" id="sort-type"  onclick="handleFirstClick(event)">Publikationsart</button>
+   <button class="button button1" id="sort-year"  onclick="handleFirstClick(event)">Jahreszahl</button>
+   <button class="button button1" id="sort-topic" onclick="handleFirstClick(event)">Thema</button>
    (jeweils doppelt klicken)
 </p></div>
 
