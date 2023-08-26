@@ -11548,7 +11548,7 @@ imp {
   border: 2px solid var(--bs-primary);
   
   box-shadow: inset 0 0 0 var(--padding) var(--bs-primary);
-  color: #BBC6D3;
+  color: rgba(255, 255, 255, 0.55);
   line-height: .4;	
 
 }
@@ -11765,7 +11765,7 @@ imp {
     border-top: 1px solid #BEC1C5;
 
     box-shadow: inset 0 0 0 var(--padding) #202124;
-    color: #202124;
+    color: rgba(255, 255, 255, 0.55);
     line-height: .4;	
   
   }
