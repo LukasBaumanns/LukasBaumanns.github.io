@@ -11345,6 +11345,7 @@ p.lead {
   font-variation-settings: 
   "wght" 400,
   "wdth" 50;
+  line-height: 1.2;
 
   font-size: 1.5rem;
 }
