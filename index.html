@@ -666,7 +666,9 @@ data-type:"5. Konferenzbeiträge (mit Peer-Review)"
 data-type:"6. Konferenzbeiträge (ohne Peer-Review)"
 data-type:"7. Aufsätze in Praxiszeitschriften"
 data-type:"8. Sonstige Publikationen" -->
-        <style>
+
+
+        <!-- <style>
           /* Style for the unordered list */
 
           /* Style for list items */
@@ -698,7 +700,27 @@ data-type:"8. Sonstige Publikationen" -->
             opacity: 0.5;
           }
 
+        </style> -->
+
+        <style>
+          ul {
+            list-style: none; /* Remove default list style */
+            padding: 0; /* Remove default padding */
+          }
+          li {
+            position: relative;
+            padding-left: 00px; /* Adjust this value as needed */
+          }
+          li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: -500px; /* Adjust this value as needed */
+          }
+
+
         </style>
+
+
 
 
 
