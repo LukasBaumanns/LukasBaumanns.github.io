@@ -668,16 +668,24 @@ data-type:"7. Aufsätze in Praxiszeitschriften"
 data-type:"8. Sonstige Publikationen" -->
 <style>
   /* Style for the unordered list */
-  /* ul {
-      list-style-type: none; Remove default list-style type (e.g., bullets)
-      padding: 0; /* Remove default padding */
-  } */
 
   /* Style for list items */
   fa-li {
       color: transparent; /* Make the enumeration numbers transparent */
   }
 </style>
+
+<style>
+  ul {
+    /* list-style: decimal inside; */
+  }
+  li::before {
+    content: counter(item) ".";
+    color: rgba(0, 0, 0, 0); /* Transparent numbers */
+    padding-left: 20px; /* Adjust this value as needed */
+  }
+</style>
+ 
 
 
         <ul class="fa-ul" id="publicationss">
