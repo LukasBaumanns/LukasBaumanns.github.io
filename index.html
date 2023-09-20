@@ -31,8 +31,8 @@
     });
   </script>
 
-<!-- Up button -->
-<link rel="stylesheet" href="css/up_btn.css" />
+  <!-- Up button -->
+  <link rel="stylesheet" href="css/up_btn.css" />
 
 
 </head>
@@ -44,7 +44,7 @@
   <script src="js/up_btn.js"></script>
   <script>
     up({});
-    </script>
+  </script>
 
 
   <!-- Navigation-->
@@ -666,28 +666,40 @@ data-type:"5. Konferenzbeiträge (mit Peer-Review)"
 data-type:"6. Konferenzbeiträge (ohne Peer-Review)"
 data-type:"7. Aufsätze in Praxiszeitschriften"
 data-type:"8. Sonstige Publikationen" -->
-<style>
-  /* Style for the unordered list */
+        <style>
+          /* Style for the unordered list */
 
-  /* Style for list items */
-  fa-li {
-      color: transparent; /* Make the enumeration numbers transparent */
-  }
-</style>
+          /* Style for list items */
+          fa-li {
+            color: transparent;
+            /* Make the enumeration numbers transparent */
+          }
+        </style>
 
-<style>
-  ul {
-    list-style: decimal inside;
-  }
-  fa-ul::before {
-    content: counter(item) ".";
-    color: rgba(0, 0, 0, 0); /* Transparent numbers */
-    /* padding-left: 20px; Adjust this value as needed */
-    opacity: 0.5;
+        <style>
+          ul {
+            list-style: decimal inside;
+          }
 
-  }
-</style>
- 
+          fa-ul::before {
+            content: counter(item) ".";
+            color: rgba(0, 0, 0, 0);
+            /* Transparent numbers */
+            /* padding-left: 20px; Adjust this value as needed */
+            opacity: 0.5;
+          }
+
+
+          ul::before {
+            content: counter(item) ".";
+            color: rgba(0, 0, 0, 0);
+            /* Transparent numbers */
+            /* padding-left: 20px; Adjust this value as needed */
+            opacity: 0.5;
+          }
+
+        </style>
+
 
 
         <ul class="fa-ul" id="publicationss">
@@ -1231,7 +1243,7 @@ data-type:"8. Sonstige Publikationen" -->
                 subheading.classList.add('subheading');
                 publicationss.appendChild(subheading);
                 currentValue = item.getAttribute(dataAttribute);
-              }
+              } 
               publicationss.appendChild(item);
             });
           }
