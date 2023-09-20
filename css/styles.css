@@ -5809,8 +5809,9 @@ fieldset:disabled .btn {
 .list-group-numbered>li::before {
   content: counters(section, ".") ". ";
   counter-increment: section;
-  color: #fff;
+  /* color: #fff; */
 }
+
 
 .list-group-item-action {
   width: 100%;
