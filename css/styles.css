@@ -12812,6 +12812,11 @@ imp {
 
   }
 
+  .fa-lii:hover {
+
+    color: var(--bs-primaryhoverdark);
+  }
+  
   table td {
     /* Tabellentitel-Farbe*/
     color: #BEC1C5;
