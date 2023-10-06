@@ -80,6 +80,7 @@
   justify-content: center;
   align-items: center;
   transform: scale(1);
+  border: 1px solid white;
 }
 
 .up-btn.up-btn__hide {
@@ -106,6 +107,8 @@
 @media (prefers-color-scheme: dark) {
   .up-btn {
     background: var(--bs-primarydark);
+    border: 0px solid white;
+
   }
 
   .up-btn:hover {
