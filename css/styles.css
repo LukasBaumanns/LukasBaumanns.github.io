@@ -106,15 +106,16 @@ body {
 
 /* Trennlinie */
 hr {
-  margin: 1rem 0;
-  color: var(--bs-gray-dark);
-  background-color: currentColor;
-  /* border: 0; */
+  /* margin: 1rem 0; */
+  color: var(--bs-textdark);
+  /* background-color: currentColor; */
+  border-style: solid;
+  border-width: 1px;
   opacity: 1;
 }
 
 hr:not([size]) {
-  height: 1px;
+  height: 0px;
 }
 
 h6,
@@ -12399,8 +12400,8 @@ p.lead {
 
 .social-icons .social-icon:hover {
   background-color: var(--bs-primary);
-  /* transform: scale(1.1) ;
-  transition:  0.1s ease-in-out; */
+  /* transform: scale(1.1) ;*/
+  transition:  0.15s ease-in-out; 
 
 }
 
@@ -12830,12 +12831,16 @@ color: rgba(255, 255, 255, 0.55);
     color: var(--bs-primaryhoverdark) !important;
   }
   .social-icons .social-icon {
-    background-color: #fff;
-    color: var(--bs-gray-dark);
+    background-color: var(--bs-backgrounddark);
+    color: #fff;
+    border: 1px solid white;
+
   }
   
   .social-icons .social-icon:hover {
     background-color: var(--bs-primarydark) !important;
+    /* border: none; */
+
     /* transform: scale(1.1) ; */
     /* transition:  0.15s ease-in-out; */
     transition-duration: 0.15s;
@@ -12868,7 +12873,7 @@ color: rgba(255, 255, 255, 0.55);
   .accordion {
     /* border: 2px solid var(--bs-backgrounddark); */
 
-    /* border-top: 1px solid var(--bs-textdark); */
+    border-top: 1px solid var(--bs-textdark);
     /* border-bottom: 1px solid var(--bs-textdark); */
     /* border: 1px solid var(--bs-textdark); */
 
