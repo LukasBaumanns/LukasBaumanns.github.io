@@ -12599,22 +12599,32 @@ imp {
 
 }
 
+.accordion.active{
+  background-color: var(--bs-primaryhover); 
+}
+
 .accordion:hover {
   background-color: var(--bs-primaryhover); 
 }
 
+.accordion:focus {
+  background-color: var(--bs-primaryhover); 
+}
+
+
+/* Impressum Text */
 .panel {
   display: none;
   overflow: hidden;
 height: auto;
 --padding: 18px;
 width: 100%;
-background-color: var(--bs-primary);
+background-color: var(--bs-primaryhover);
 float: left;
 padding: var(--padding);
 /* border: 2px solid var(--bs-primary); */
-border-bottom: 1px solid #fff;
-box-shadow: inset 0 0 0 var(--padding) var(--bs-primary);
+/* border-bottom: 1px solid #fff; */
+box-shadow: inset 0 0 0 var(--padding) var(--bs-primaryhover);
 color: rgba(255, 255, 255, 0.55);
 }
 
