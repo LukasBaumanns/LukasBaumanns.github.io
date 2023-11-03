@@ -178,32 +178,8 @@
     </section>
     <hr class="m-0" />
 
-    <label for="theme" class="theme">
-      <span>Light</span>
-      <span class="theme__toggle-wrap">
-        <input
-          type="checkbox"
-          class="theme__toggle"
-          id="theme"
-          role="switch"
-          name="theme"
-          value="dark"
-        />
-        <span class="theme__fill"></span>
-        <span class="theme__icon">
-          <span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span
-          ><span class="theme__icon-part"></span>
-        </span>
-      </span>
-      <span>Dark</span>
-    </label>
+
+
 
     <!-- Experience-->
     <!-- <section class="resume-section">
@@ -636,58 +612,60 @@
    <p> The accepted manuscripts (postprints) can be requested via <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;l&#x75;&#x6b;%61&#x73;&#x2e;%62%61%75&#x6d;&#x61;%6e%6e%73&#x40;u&#x6e;i-%6boe%6cn%2ed&#x65;" title="luk&#x61;s&#x2e;ba&#x75;manns@u&#x6e;i&#x2d;k&#x6f;el&#x6e;.d&#x65;">luk&#x61;s&#x2e;ba&#x75;manns@u&#x6e;i&#x2d;k&#x6f;el&#x6e;.d&#x65; <i class="fa-solid fa-envelope"></i></a>. </p>         -->
         <!-- <p>Zitationen sind bei <a href="https://scholar.google.com/citations?user=oW6iCZ8AAAAJ&hl=de&oi=ao" target ="_blank">Google Scholar <i class="fa-solid fa-graduation-cap"></i></a> einsehbar.</p>  -->
 
-        <!--############################  -->
+ 
+        
+       <!-- Skript für Doppelklick -->
+       <script>
+        // Function to handle the first click and trigger the second click
+        function handleFirstClick(event) {
+          var target = event.target;
 
-        <!-- Skript für Doppelklick -->
-        <script>
-          // Function to handle the first click and trigger the second click
-          function handleFirstClick(event) {
-            var target = event.target;
+          // Simulate the first click
+          target.click();
 
-            // Simulate the first click
-            target.click();
+          // Remove the event listener to prevent further clicks
+          target.removeEventListener('click', handleFirstClick);
 
-            // Remove the event listener to prevent further clicks
-            target.removeEventListener('click', handleFirstClick);
+          // Re-add the event listener after a short delay
+          setTimeout(function () {
+            target.addEventListener('click', handleFirstClick);
+          }, 200);
+        }
+      </script>
 
-            // Re-add the event listener after a short delay
-            setTimeout(function () {
-              target.addEventListener('click', handleFirstClick);
-            }, 200);
-          }
-        </script>
+      <!-- Skript, damit die Hover-Farbe bleibt nach Klick -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buttons = document.querySelectorAll(".button1");
 
-        <!-- Skript, damit die Hover-Farbe bleibt nach Klick -->
-
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const buttons = document.querySelectorAll(".button1");
-
-            buttons.forEach(button => {
-              button.addEventListener("click", () => {
-                buttons.forEach(btn => {
-                  btn.classList.remove("active1");
-                });
-                button.classList.add("active1");
+          buttons.forEach(button => {
+            button.addEventListener("click", () => {
+              buttons.forEach(btn => {
+                btn.classList.remove("active1");
               });
+              button.classList.add("active1");
             });
           });
-        </script>
+        });
+      </script>
+
+      
 
 
 
-        <div>
-          <p>
-            <!-- Publikationsliste sortieren nach:  -->
-          <h3 class="mb-0" id="publicationsss">Publikationsliste sortieren nach:</a></h3>
 
-          <!-- The HTML for the buttons to sort the list -->
-          <button class="button button1" id="sort-type" onclick="handleFirstClick(event)">Publikationsart</button>
-          <button class="button button1" id="sort-year" onclick="handleFirstClick(event)">Jahreszahl</button>
-          <button class="button button1" id="sort-topic" onclick="handleFirstClick(event)">Thema</button>
-          </p>
-        </div>
+        <!-- Die eigentilchen Buttons zum Sortieren der Publikationeliste -->
+      <div>
+        <p>
+        <h3 class="mb-0" id="publicationsss">Publikationsliste sortieren nach:</a></h3>
+        <button class="button button1" id="sort-type" onclick="handleFirstClick(event)">Publikationsart</button>
+        <button class="button button1" id="sort-year" onclick="handleFirstClick(event)">Jahreszahl</button>
+        <button class="button button1" id="sort-topic" onclick="handleFirstClick(event)">Thema</button>
+        </p>
+      </div>
+      
+
+
 
 
 
@@ -1198,6 +1176,10 @@ data-type:"8. Sonstige Publikationen" -->
     </li> -->
         </ul>
 
+
+
+
+        
         <!-- The JavaScript to sort the list and add subheadings -->
         <script>
           // Get a reference to the list and the buttons

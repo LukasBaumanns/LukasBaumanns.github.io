@@ -7,6 +7,9 @@
 // Scripts
 // 
 
+
+
+
 // Klickt automatisch den Knopf "Sortieren nach Publikationsart" beim Laden der Seite
 window.onload = function(){
     document.getElementById('sort-type').click();
