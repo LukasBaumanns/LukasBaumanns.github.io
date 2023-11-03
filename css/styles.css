@@ -12657,6 +12657,8 @@ color: rgba(255, 255, 255, 0.55);
   background-color: var(--bs-primary);
   /* Green */
   color: white;
+  border: 1px solid var(--bs-primary);
+
 }
 
 /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
@@ -12664,6 +12666,8 @@ color: rgba(255, 255, 255, 0.55);
   background-color: var(--bs-primary) !important;
     color: white;
   /* background-color: var(--bs-primaryhover) !important; */
+    border: 1px solid var(--bs-primary);
+
 }
 
 
@@ -12882,13 +12886,13 @@ input:checked + .slider:before {
   .button1:hover {
     background-color: var(--bs-primarydark);
     color: white;
-    border: none
+    border: 1px solid var(--bs-backgrounddark) !important;
   }
 
   /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
   .active1 {
     background-color: var(--bs-primarydark) !important;
-    border: none;
+    border: 1px solid var(--bs-backgrounddark) !important;
   }
 
 
