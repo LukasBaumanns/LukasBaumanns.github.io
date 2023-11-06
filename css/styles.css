@@ -12736,6 +12736,9 @@ color: rgba(255, 255, 255, 0.55);
   text-align: left; /* Align the carousel contents to the left */
 }
 
+.carousel-inner {
+  background-color: transparent;
+}
 
 
 /* Ende */
@@ -12842,7 +12845,10 @@ input:checked + .slider:before {
   }
 
   .container {
-    background: #292929;
+    background: transparent;
+    /* max-width: 940px;	
+    margin: 0 auto; */
+  padding-bottom: 10px;
   }
 
   a {
