@@ -41,4 +41,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+// ********************* Slider Carousel
 
+
+// ************************
