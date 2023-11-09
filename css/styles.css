@@ -712,9 +712,9 @@ progress {
 .container-sm {
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0rem);
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 0px;
 }
 
 @media (min-width: 576px) {
@@ -11698,6 +11698,7 @@ fieldset:disabled .btn {
   .justify-content-xxl-center {
     justify-content: center !important;
   }
+
 
   .justify-content-xxl-between {
     justify-content: space-between !important;
