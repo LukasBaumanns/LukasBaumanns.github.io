@@ -12873,7 +12873,7 @@ input:checked + .slider:before {
     background: transparent;
     /* max-width: 940px;	
     margin: 0 auto; */
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   }
 
   a {
