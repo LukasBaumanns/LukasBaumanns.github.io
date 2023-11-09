@@ -7007,6 +7007,14 @@ fieldset:disabled .btn {
   transition: opacity 0.15s ease;
 }
 
+.carousel-control-prev {
+  margin-left: -3.5%; /* Adjust this value to move the button further left */
+}
+
+.carousel-control-next {
+  margin-right: -3.5%; /* Adjust this value to move the button further right */
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   .carousel-control-prev,
