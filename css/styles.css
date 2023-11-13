@@ -12816,6 +12816,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* Graue Publikationen, die bislang nur eingereicht sind */
+.highlighted {
+  color: rgb(200, 200, 200);
+}
 
 
 
@@ -12869,6 +12873,11 @@ input:checked + .slider:before {
     /*black*/
     /*171F2A*/
   }
+
+  .highlighted {
+    color: rgb(120, 120, 120);
+  }
+  
 
   .container {
     background: transparent;
