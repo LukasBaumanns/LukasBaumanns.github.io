@@ -12823,6 +12823,17 @@ input:checked + .slider:before {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 @media (prefers-color-scheme: dark) {
 
   /*************************Dark Mode**********************************/
@@ -13042,3 +13053,10 @@ hr {
     color: var(--bs-textdark);
   }
 }
+
+
+
+
+
+
+
