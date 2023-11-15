@@ -12399,7 +12399,7 @@ p.lead {
   /*495057 */
   color: #fff;
   border-radius: 100%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-right: 1.5rem;
 }
 
@@ -12411,6 +12411,8 @@ p.lead {
   background-color: var(--bs-primary);
   /* transform: scale(1.1) ;*/
   transition:  0.15s ease-in-out; 
+  text-decoration: none;
+
 
 }
 
