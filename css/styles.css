@@ -12827,7 +12827,19 @@ input:checked + .slider:before {
 
 
 
+.light-image,
+.dark-image {
+  max-width: 100%;
+  height: auto;
+}
 
+.light-image {
+  display: block;
+}
+
+.dark-image {
+  display: none;
+}
 
 
 
@@ -12868,6 +12880,15 @@ input:checked + .slider:before {
   /* Carousel Button am Boden */
 .carousel-indicators [data-bs-target] {
   background-color: #212121;
+}
+
+
+.light-image {
+  display: none;
+}
+
+.dark-image {
+  display: block;
 }
 
 /* Carousel Buttons links rechts */
