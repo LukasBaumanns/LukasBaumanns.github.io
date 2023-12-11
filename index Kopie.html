@@ -905,10 +905,10 @@ data-type:"8. Sonstige Publikationen" -->
               Mathematics Education (CERME 13)</em>. CERME.
           </li>
 
-          <li  data-year="2024" data-topic="1. Problem Posing"
+          <li class="highlighted"  data-year="2024" data-topic="1. Problem Posing"
             data-type="3. Journalartikel">
-            Baumanns, L., & Rott, B. (accepted). Problem-posing tasks and their influence on pre-service teachers'
-            self-efficacy and creative problem-posing performance. <em>The Journal of Mathematical Behavior</em>.
+            Baumanns, L., & Rott, B. (eingereicht). Problem-posing tasks and their influence on pre-service teachers'
+            self-efficacy and creative problem-posing performance. <em>Journalartikel</em>.
           </li>
 
           <li data-year="2023" data-topic="7. Large Language Models" data-type="8. Sonstige Publikationen">
@@ -1327,117 +1327,77 @@ data-type:"8. Sonstige Publikationen" -->
 
 
 
-
-        <!-- The JavaScript to sort the list and add subheadings -->
         <script>
-          // Get a reference to the list and the buttons
-          var publicationss = document.querySelector('#publicationss');
-          var sortYearButton = document.querySelector('#sort-year');
-          var sortTopicButton = document.querySelector('#sort-topic');
-          var sortTypeButton = document.querySelector('#sort-type');
-
-          // Add click event listeners to the buttons
-          sortYearButton.addEventListener('click', function () {
-            sortList('data-year');
+          // Array to store the selected sort criteria
+          var sortCriteria = [];
+        
+          // Update the click event handlers for the buttons
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('#sort-year').addEventListener('click', function () {
+              updateSortCriteria('data-year');
+              sortAndDisplayList();
+            });
+            document.querySelector('#sort-type').addEventListener('click', function () {
+              updateSortCriteria('data-type');
+              sortAndDisplayList();
+            });
+            document.querySelector('#sort-topic').addEventListener('click', function () {
+              updateSortCriteria('data-topic');
+              sortAndDisplayList();
+            });
           });
-          sortTopicButton.addEventListener('click', function () {
-            sortLists('data-topic');
-          });
-          sortTypeButton.addEventListener('click', function () {
-            sortLists('data-type');
-          });
-
-          function sortList(dataAttribute) {
-            // Get all the list items and subheadings
-            var items = publicationss.querySelectorAll('li');
-            var subheadings = publicationss.querySelectorAll('.subheading');
-
-            // Convert the list items and subheadings to arrays so we can use array methods on them
-            items = Array.prototype.slice.call(items);
-            subheadings = Array.prototype.slice.call(subheadings);
-
-            // Remove all the existing list items and subheadings from the list
-            subheadings.forEach(function (subheading) { publicationss.removeChild(subheading); });
-            items.forEach(function (item) { publicationss.removeChild(item); });
-
-            // Create a new array of list items sorted by the given data attribute
-            var sortedItems = items.sort(function (a, b) {
-              if (a.getAttribute(dataAttribute) < b.getAttribute(dataAttribute)) {
-                return 1;
-              }
-              if (a.getAttribute(dataAttribute) > b.getAttribute(dataAttribute)) {
-                return -1;
+        
+          // Function to update the sort criteria array
+          function updateSortCriteria(criteria) {
+            var index = sortCriteria.indexOf(criteria);
+            if (index === -1) {
+              sortCriteria.push(criteria);
+            } else {
+              sortCriteria.splice(index, 1);
+            }
+          }
+        
+          // Function to sort and display the list
+          function sortAndDisplayList() {
+            var items = Array.from(document.querySelectorAll('#publicationss li'));
+            var publicationss = document.querySelector('#publicationss');
+        
+            // Remove all current items and headings
+            publicationss.innerHTML = '';
+        
+            // Sort items based on the selected criteria
+            items.sort(function (a, b) {
+              for (var i = 0; i < sortCriteria.length; i++) {
+                var attr = sortCriteria[i];
+                if (a.getAttribute(attr) < b.getAttribute(attr)) return -1;
+                if (a.getAttribute(attr) > b.getAttribute(attr)) return 1;
               }
               return 0;
             });
-
-            // Loop through the sorted array of list items and add them to the list,
-            // inserting a subheading whenever the data attribute changes
-            var currentValue = null;
-            sortedItems.forEach(function (item) {
-              if (item.getAttribute(dataAttribute) !== currentValue) {
-                var subheading = document.createElement('li');
-                subheading.innerHTML = item.getAttribute(dataAttribute);
-                subheading.classList.add('subheading');
-                publicationss.appendChild(subheading);
-                currentValue = item.getAttribute(dataAttribute);
-              }
-              publicationss.appendChild(item);
-            });
-          }
-
-
-          function sortLists(dataAttribute) {
-            // Get all the list items and subheadings
-            var items = publicationss.querySelectorAll('li');
-            var subheadings = publicationss.querySelectorAll('.subheading');
-
-            // Convert the list items and subheadings to arrays so we can use array methods on them
-            items = Array.prototype.slice.call(items);
-            subheadings = Array.prototype.slice.call(subheadings);
-
-            // Remove all the existing list items and subheadings from the list
-            subheadings.forEach(function (subheading) {
-              publicationss.removeChild(subheading);
-            });
+        
+            // Add items with headings and subheadings
+            var currentValues = {};
             items.forEach(function (item) {
-              publicationss.removeChild(item);
-            });
-
-            // Create a new array of list items sorted by the given data attribute and year
-            var sortedItems = items.sort(function (a, b) {
-              var aValue = a.getAttribute(dataAttribute);
-              var bValue = b.getAttribute(dataAttribute);
-              var aYear = a.getAttribute('data-year');
-              var bYear = b.getAttribute('data-year');
-
-              if (aValue < bValue) {
-                return -1;
-              } else if (aValue > bValue) {
-                return 1;
-              } else {
-                // If values are the same, sort by year in descending order
-                return bYear - aYear;
-              }
-            });
-
-            // Loop through the sorted array of list items and add them to the list,
-            // inserting a subheading whenever the data attribute changes
-            var currentValue = null;
-            sortedItems.forEach(function (item) {
-              if (item.getAttribute(dataAttribute) !== currentValue) {
-                var subheading = document.createElement('li');
-                subheading.innerHTML = item.getAttribute(dataAttribute);
-                subheading.classList.add('subheading');
-                publicationss.appendChild(subheading);
-                currentValue = item.getAttribute(dataAttribute);
-              }
+              var newItem = true;
+              sortCriteria.forEach(function (criteria) {
+                var value = item.getAttribute(criteria);
+                if (currentValues[criteria] !== value) {
+                  if (newItem) {
+                    var heading = document.createElement('li');
+                    heading.innerHTML = value;
+                    heading.classList.add('subheading');
+                    publicationss.appendChild(heading);
+                    currentValues[criteria] = value;
+                    newItem = false;
+                  }
+                }
+              });
               publicationss.appendChild(item);
             });
           }
-
-
         </script>
+        
+        
 
         <!-- Optional CSS to style the list and subheadings -->
         <style>
@@ -1772,7 +1732,7 @@ data-type:"8. Sonstige Publikationen" -->
     </script>
 
   </p>
-  <p>Stand: Dezember 2023</p>
+  <p>Stand: November 2023</p>
 </div>
 
 <button class="accordion"> Datenschutzerklärung</button>
