@@ -12968,7 +12968,7 @@ input:checked + .slider:before {
   .button1:hover {
     background-color: var(--bs-primarydark);
     color: white;
-    border: 1px solid var(--bs-backgrounddark) !important;
+    border: 1px solid var(--bs-primarydark) !important;
   }
 
   /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
