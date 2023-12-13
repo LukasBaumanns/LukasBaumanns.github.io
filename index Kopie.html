@@ -759,23 +759,6 @@
 
 
         <!-- Skript für Doppelklick -->
-        <script>
-          // Function to handle the first click and trigger the second click
-          function handleFirstClick(event) {
-            var target = event.target;
-
-            // Simulate the first click
-            target.click();
-
-            // Remove the event listener to prevent further clicks
-            target.removeEventListener('click', handleFirstClick);
-
-            // Re-add the event listener after a short delay
-            setTimeout(function () {
-              target.addEventListener('click', handleFirstClick);
-            }, 200);
-          }
-        </script>
 
         <!-- Skript, damit die Hover-Farbe bleibt nach Klick -->
         <script>
@@ -823,7 +806,7 @@ data-topic:"3. Mathematische Kreativität"
 data-topic:"4. Frühe mathematische Bildung"
 data-topic:"5. Mathematische Basiskompetenzen"
 data-topic:"6. Besondere Schwierigkeiten beim Mathematiklernen" 
-data-topic:"7. Machine Learning" 
+data-topic:"7. Large Language Models" 
 data-topic:"Sonstiges" -->
 
         <!-- data-type:"1. Monographien"
@@ -841,7 +824,7 @@ data-type:"8. Sonstige Publikationen" -->
 
         <ul class="fa-ul" id="publicationss">
          
-          <li  data-year="2023" data-topic="7. Machine Learning" data-type="6. Konferenzbeiträge (ohne Peer-Review)">
+          <li  data-year="2024" data-topic="7. Large Language Models" data-type="6. Konferenzbeiträge (ohne Peer-Review)">
     Buchholtz, N., Baumanns, L., Huget, J., Peters, F., Schorcht, S., & Pohl, M. (2024, in print). Productive use of generative AI language models for mathematics teaching. In <em>Proceedings of the 16th International Conference on Technology in Mathematics Teaching (ICTMT 16)</em>. ICTMT. 
   </li> 
           
@@ -905,10 +888,10 @@ data-type:"8. Sonstige Publikationen" -->
               Mathematics Education (CERME 13)</em>. CERME.
           </li>
 
-          <li class="highlighted"  data-year="2024" data-topic="1. Problem Posing"
+          <li  data-year="2024" data-topic="1. Problem Posing"
             data-type="3. Journalartikel">
-            Baumanns, L., & Rott, B. (eingereicht). Problem-posing tasks and their influence on pre-service teachers'
-            self-efficacy and creative problem-posing performance. <em>Journalartikel</em>.
+            Baumanns, L., & Rott, B. (accepted). Problem-posing tasks and their influence on pre-service teachers'
+            self-efficacy and creative problem-posing performance. <em>The Journal of Mathematical Behavior</em>.
           </li>
 
           <li data-year="2023" data-topic="7. Large Language Models" data-type="8. Sonstige Publikationen">
@@ -1325,80 +1308,120 @@ data-type:"8. Sonstige Publikationen" -->
         </ul>
 
 
-
-
-        <script>
-          // Array to store the selected sort criteria
-          var sortCriteria = [];
-        
-          // Update the click event handlers for the buttons
-          document.addEventListener("DOMContentLoaded", function () {
-            document.querySelector('#sort-year').addEventListener('click', function () {
-              updateSortCriteria('data-year');
-              sortAndDisplayList();
-            });
-            document.querySelector('#sort-type').addEventListener('click', function () {
-              updateSortCriteria('data-type');
-              sortAndDisplayList();
-            });
-            document.querySelector('#sort-topic').addEventListener('click', function () {
-              updateSortCriteria('data-topic');
-              sortAndDisplayList();
-            });
-          });
-        
-          // Function to update the sort criteria array
-          function updateSortCriteria(criteria) {
-            var index = sortCriteria.indexOf(criteria);
-            if (index === -1) {
-              sortCriteria.push(criteria);
-            } else {
-              sortCriteria.splice(index, 1);
-            }
+        <style>
+          .subheading {
+            font-size: 16px;
+            color: blue;
+            font-weight: bold;
+            /* Add any other styles you want */
           }
         
-          // Function to sort and display the list
-          function sortAndDisplayList() {
-            var items = Array.from(document.querySelectorAll('#publicationss li'));
-            var publicationss = document.querySelector('#publicationss');
+          .primary-subheading {
+            font-size: 18px;
+            color: green;
+            /* Styles for primary subheadings */
+          }
         
-            // Remove all current items and headings
-            publicationss.innerHTML = '';
+          .secondary-subheading {
+            font-size: 14px;
+            color: red;
+            /* Styles for secondary subheadings */
+          }
+        </style>
         
-            // Sort items based on the selected criteria
+
+
+        <!-- The JavaScript to sort the list and add subheadings -->
+        <script>
+          // Global array to keep track of active sorting criteria
+          var activeSortCriteria = [];
+        
+          // Function to update active sort criteria
+          function updateSortCriteria(criteria) {
+            var index = activeSortCriteria.indexOf(criteria);
+            if (index === -1) {
+              activeSortCriteria.push(criteria);
+            } else {
+              activeSortCriteria.splice(index, 1);
+            }
+            sortPublications();
+          }
+        
+          // Function to sort and update the publication list
+          function sortPublications() {
+            // Get all list items
+            var items = Array.prototype.slice.call(document.querySelectorAll('#publicationss > li:not(.subheading)'));
+        
+            // Sort items based on active criteria
             items.sort(function (a, b) {
-              for (var i = 0; i < sortCriteria.length; i++) {
-                var attr = sortCriteria[i];
-                if (a.getAttribute(attr) < b.getAttribute(attr)) return -1;
-                if (a.getAttribute(attr) > b.getAttribute(attr)) return 1;
+              for (var i = 0; i < activeSortCriteria.length; i++) {
+                var criteria = activeSortCriteria[i];
+                var aValue = a.getAttribute('data-' + criteria);
+                var bValue = b.getAttribute('data-' + criteria);
+                if (aValue !== bValue) {
+                  return aValue < bValue ? -1 : 1;
+                }
               }
               return 0;
             });
         
-            // Add items with headings and subheadings
-            var currentValues = {};
-            items.forEach(function (item) {
-              var newItem = true;
-              sortCriteria.forEach(function (criteria) {
-                var value = item.getAttribute(criteria);
-                if (currentValues[criteria] !== value) {
-                  if (newItem) {
-                    var heading = document.createElement('li');
-                    heading.innerHTML = value;
-                    heading.classList.add('subheading');
-                    publicationss.appendChild(heading);
-                    currentValues[criteria] = value;
-                    newItem = false;
-                  }
-                }
-              });
-              publicationss.appendChild(item);
-            });
+            // Remove existing items and subheadings
+            var publicationss = document.querySelector('#publicationss');
+            publicationss.innerHTML = '';
+        
+            // Keep track of last seen values for primary and secondary criteria
+            var lastPrimary = null;
+            var lastSecondary = {};
+        
+// Function to create a subheading
+function createSubheading(text, isPrimary) {
+  var subheading = document.createElement('li');
+  subheading.textContent = text;
+  subheading.classList.add('subheading');
+  
+  // Apply class based on whether it's a primary or secondary subheading
+  if (isPrimary) {
+    subheading.classList.add('primary-subheading');
+  } else {
+    subheading.classList.add('secondary-subheading');
+  }
+
+  return subheading;
+}
+        
+items.forEach(function(item) {
+  var primaryValue = item.getAttribute('data-' + activeSortCriteria[0]);
+  var secondaryValue = activeSortCriteria.slice(1).map(c => item.getAttribute('data-' + c)).join(", ");
+
+  if (primaryValue !== lastPrimary) {
+    // Add primary subheading
+    publicationss.appendChild(createSubheading(primaryValue, true)); // true for primary
+    lastPrimary = primaryValue;
+    lastSecondary = {}; // Reset secondary subheading tracker
+  }
+
+  if (secondaryValue !== lastSecondary[primaryValue]) {
+    // Add secondary subheading
+    publicationss.appendChild(createSubheading(secondaryValue, false)); // false for secondary
+    lastSecondary[primaryValue] = secondaryValue;
+  }
+
+  publicationss.appendChild(item);
+});
           }
+        
+          // Add click event listeners to buttons
+          document.querySelector('#sort-year').addEventListener('click', function () {
+            updateSortCriteria('year');
+          });
+          document.querySelector('#sort-topic').addEventListener('click', function () {
+            updateSortCriteria('topic');
+          });
+          document.querySelector('#sort-type').addEventListener('click', function () {
+            updateSortCriteria('type');
+          });
         </script>
         
-        
-
         <!-- Optional CSS to style the list and subheadings -->
         <style>
           #publicationss {
@@ -1732,7 +1755,7 @@ data-type:"8. Sonstige Publikationen" -->
     </script>
 
   </p>
-  <p>Stand: November 2023</p>
+  <p>Stand: Dezember 2023</p>
 </div>
 
 <button class="accordion"> Datenschutzerklärung</button>
