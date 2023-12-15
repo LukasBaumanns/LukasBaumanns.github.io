@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Kopierer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: #f0f0f7;
+    }
+    
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+    }
+    
+    button {
+        background-color: #007aff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+</style>
+
+<body>
+    <div class="container">
+        <p id="textToCopy">Deine Aufgabe, ChatGPT, ist es, als unterstützender Assistent zu fungieren, der mich bei der Entwicklung von Ideen zur Anpassung des Schwierigkeitsgrades von Mathematikaufgaben für Schüler:innen der Mittelstufe unterstützt. Anstatt eigene Ideen vorzuschlagen, stelle mir gezielte Fragen, die mich dazu anregen, über verschiedene Aspekte und Ansätze nachzudenken. Beginne mit dem Problem ‚Wie viele Teiler hat die Zahl 60?‘ und frage mich nach möglichen Wegen, dieses Problem zu modifizieren oder zu erweitern, um den Schwierigkeitsgrad anzupassen. Deine Fragen sollten darauf abzielen, meine Kreativität und mein fachliches Wissen zu nutzen, um den Lernprozess der Schüler:innen zu verbessern. Denke daran, nur Hinweise an mich zu liefern und keine eigenen Aufgaben aufzuwerfen. Die Konversation endet erst, wenn ich mich für ein einfaches, ein moderates und ein schwieriges Problem entschieden habe. Sobald ich diese Entscheidungen getroffen habe, sollst du die Konversation mit dem Wort 'ENDE' beenden.
+
+            Deine erste Antwort soll sein: „Verstanden! Lass uns beginnen. Wie könnten wir das Problem „Wie viele Teiler hat die Zahl 60?“ anpassen, um es für Schüler:innen der Mittelstufe einfacher zu gestalten?“</p>
+        <button id="copyButton">Text kopieren</button>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+        var text = document.getElementById("textToCopy").innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            // Nach erfolgreichem Kopieren
+            window.location.href = "https://chat.openai.com"; // URL der Zielwebseite
+        }, function(err) {
+            console.error('Fehler beim Kopieren: ', err);
+        });
+    });
+    
+</script>
+
+</html>
