@@ -13003,7 +13003,7 @@ input:checked + .slider:before {
   
   .social-icons .social-icon:hover {
     background-color: var(--bs-primarydark) !important;
-    /* border: none; */
+    border: 1px solid var(--bs-primarydark);
 
     /* transform: scale(1.1) ; */
     /* transition:  0.15s ease-in-out; */
