@@ -5,6 +5,8 @@
     2021 - v 3.1.3
 */
 
+
+
 class GlowCookies {
   constructor() {
     // Cookies banner
