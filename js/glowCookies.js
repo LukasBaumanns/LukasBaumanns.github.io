@@ -80,41 +80,7 @@ class GlowCookies {
     document.getElementById('prebannerBtn').addEventListener('click', () => this.openSelector())
     document.getElementById('acceptCookies').addEventListener('click', () => this.acceptCookies())
     document.getElementById('rejectCookies').addEventListener('click', () => this.rejectCookies())
-
-    // Add overlay
-    this.Overlay = document.createElement("div");
-    this.Overlay.style.position = 'fixed';
-    this.Overlay.style.top = 0;
-    this.Overlay.style.left = 0;
-    this.Overlay.style.width = '100%';
-    this.Overlay.style.height = '100%';
-    this.Overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    this.Overlay.style.zIndex = '5010'; // Ensure it's below the banner
-    document.body.appendChild(this.Overlay);
-
-    // Make sure the cookie banner has a higher z-index than the overlay
-    this.DOMbanner.style.zIndex = '5020';
-    // Immediately update display based on cookies status
-    this.updateDisplayBasedOnCookies();
-
-
   }
-
-  updateDisplayBasedOnCookies() {
-    if (this.cookiesAccepted()) {
-        this.DOMbanner.style.display = 'none';
-        this.Overlay.style.display = 'none';
-    } else {
-        this.DOMbanner.style.display = 'block';
-        this.Overlay.style.display = 'block';
-    }
-}
-
-cookiesAccepted() {
-  // Check if the cookie consent has been set; adjust logic based on your cookie handling
-  return document.cookie.indexOf("cookie_consent=") !== -1;
-}
-
 
   checkStatus() {
     switch (localStorage.getItem("GlowCookies")) {
@@ -146,18 +112,12 @@ cookiesAccepted() {
     this.openManageCookies()
     this.activateTracking()
     this.addCustomScript()
-
-    document.body.removeChild(this.Overlay);
-
   }
 
   rejectCookies() {
     localStorage.setItem("GlowCookies", "0");
     this.openManageCookies();
     this.disableTracking();
-
-    document.body.removeChild(this.Overlay);
-
   }
 
   activateTracking() {
