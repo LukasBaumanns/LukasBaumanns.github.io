@@ -23,16 +23,22 @@
 
 
   <!-- Cookies Banner -->
-  <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.7/src/glowCookies.min.js"></script>
-  <!-- <script>
+  <script src="js/glowCookies.js"></script>
+  <script>
     glowCookies.start('de', {
-      style: 3,
-      analytics: 'G-FH87DE17XF',
-      facebookPixel: '990955817632355',
-      policyLink: 'https://link-to-your-policy.com'
-    });
-  </script> -->
-
+            style: 1,
+            analytics: 'G-FH87DE17XF',
+            facebookPixel: '990955817632355',
+            policyLink: 'https://commission.europa.eu/cookies-policy_de',
+            hideAfterClick: true,
+            position: "right",
+            bannerDescription: "Diese Webseite nutzt Cookies (auch von Drittanbietern), um Surfverhalten zu analysieren.",
+            bannerLinkText: "",
+            acceptBtnBackground: "#3d6198",
+            acceptBtnText: "Akzeptieren"
+          })
+    </script>
+    
 
 
   
@@ -83,23 +89,7 @@
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activities">Aktivitäten & Funktionen</a></li>
       </ol>
     </div>
-    <!-- Cookies Banner -->
-    <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.7/src/glowCookies.min.js"></script>
-    <!-- <script>
-      glowCookies.start('de', {
-        style: 1,
-        analytics: 'G-FH87DE17XF',
-        facebookPixel: '990955817632355',
-        policyLink: 'https://commission.europa.eu/cookies-policy_de',
-        hideAfterClick: true,
-        position: "right",
-        bannerDescription: "Diese Webseite nutzt Cookies (auch von Drittanbietern), um Surfverhalten zu analysieren.",
-        bannerLinkText: "",
-        acceptBtnBackground: "#3d6198",
-        acceptBtnText: "Akzeptieren"
-      });
-    </script>
- -->
+
   </nav>
   <!-- Page Content-->
   <div class="container-fluid p-0">
@@ -2194,90 +2184,6 @@ data-type:"8. Sonstige Publikationen" -->
     });
   }
 </script>
-
-
-
-
-
-
-
-<script>
-
-// // Create an overlay element
-// var overlay = document.createElement("div");
-// overlay.id = "cookie-overlay";
-// overlay.style.position = "fixed";
-// overlay.style.width = "100%";
-// overlay.style.height = "100%";
-// overlay.style.top = "0";
-// overlay.style.left = "0";
-// overlay.style.right = "0";
-// overlay.style.bottom = "0";
-// overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
-// overlay.style.zIndex = "999";  // Ensure it is below the cookie banner
-// document.body.appendChild(overlay);
-
-// Initialize your cookie banner
-glowCookies.start('de', {
-        style: 1,
-        analytics: 'G-FH87DE17XF',
-        facebookPixel: '990955817632355',
-        policyLink: 'https://commission.europa.eu/cookies-policy_de',
-        hideAfterClick: true,
-        position: "right",
-        bannerDescription: "Diese Webseite nutzt Cookies (auch von Drittanbietern), um Surfverhalten zu analysieren.",
-        bannerLinkText: "",
-        acceptBtnBackground: "#3d6198",
-        acceptBtnText: "Akzeptieren"
-      });
-
-// Function to remove overlay
-function removeOverlay() {
-  console.log("Overlay will be removed now");  // Debugging statement
-  var overlay = document.getElementById("cookie-overlay");
-  if (overlay) {
-    overlay.style.display = 'none';
-  }
-}
-
-// Add event listeners to the Accept and Decline buttons
-document.addEventListener("glowCookiesAccepted", function() {
-  console.log("Accepted event triggered");  // Debugging statement
-  removeOverlay();
-});
-document.addEventListener("glowCookiesRejected", function() {
-  console.log("Rejected event triggered");  // Debugging statement
-  removeOverlay();
-});
-
-
-
-</script>
-
-
-
-
-
-
-<!-- <imp>
-  <h4 class="nav-item" style="color: rgba(255, 255, 255, 0.55);">Impressum</h4>
-  <p>Angaben gem&auml;&szlig; &sect; 5 TMG</p>
-  <p>Lukas Baumanns</p>
-  <p>Technische Universität Dortmund</p>
-  <p>Vogelpothsweg 87, 44227 Dortmund</p>
-  <p>Mail:
-    <script type="text/javascript">
-      document.write(unescape('%6c%75%6b%61%73%2e%62%61%75%6d%61%6e%6e%73%40%74%75%2d%64%6f%72%74%6d%75%6e%64%2e%64%65'));
-    </script>
-
-  </p>
-  <p>Stand: September 2023</p>
-</imp>
-
-<script>
-  let text = document.lastModified;
-  document.getElementById("demo").innerHTML = text;
-</script> -->
 
 
 
