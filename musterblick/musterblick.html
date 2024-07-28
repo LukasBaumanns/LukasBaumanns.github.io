@@ -140,12 +140,12 @@
                 background-color: black;
                 border-radius: 50%;
                 top: 40%;
-                left: 40%;
+                left: 60%;
                 animation: movePupil 20s infinite;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-            
+                justify-content: left;
+                align-items: left;
+
               }
 
               .reflection1 {
@@ -170,43 +170,132 @@
                 left: 70%;
               }
 
+              /* Responsive adjustments */
+@media (min-width: 576px) {
+  .eye-container {
+    height: 100px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-size: contain;
+  }
+
+  .pupil {
+    top: 35%;
+    left: 35%;
+  }
+
+  .reflection1 {
+    top: 5%;
+    left: 10%;
+  }
+
+  .reflection2 {
+    top: 65%;
+    left: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  .eye-container {
+    height: 110px;
+    margin-top: 90px;
+    margin-bottom: 45px;
+  }
+
+  .pupil {
+    top: 37%;
+    left: 37%;
+  }
+
+  .reflection1 {
+    top: 4%;
+    left: 8%;
+  }
+
+  .reflection2 {
+    top: 67%;
+    left: 67%;
+  }
+}
+
+@media (min-width: 992px) {
+  .eye-container {
+    height: 120px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .pupil {
+    top: 40%;
+    left: 40%;
+  }
+
+  .reflection1 {
+    top: 2%;
+    left: 5%;
+  }
+
+  .reflection2 {
+    top: 70%;
+    left: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .eye-container {
+    height: 130px;
+    margin-top: 110px;
+    margin-bottom: 55px;
+  }
+
+  .pupil {
+    top: 42%;
+    left: 42%;
+  }
+
+  .reflection1 {
+    top: 3%;
+    left: 6%;
+  }
+
+  .reflection2 {
+    top: 72%;
+    left: 72%;
+  }
+}
+
+@media (min-width: 1680px) {
+  .eye-container {
+    height: 140px;
+    margin-top: 120px;
+    margin-bottom: 60px;
+  }
+
+  .pupil {
+    top: 44%;
+    left: 44%;
+  }
+
+  .reflection1 {
+    top: 4%;
+    left: 7%;
+  }
+
+  .reflection2 {
+    top: 74%;
+    left: 74%;
+  }
+}
+
+
               @keyframes movePupil {
-                0% {
-                  top: 31.7%;
-                  left: 4.5%;
-                }
-
-                10% {
-                  top: 31.7%;
-                  left: 4.5%;
-                }
-
-                20% {
-                  top: 27%;
-                  left: 6%;
-                }
-
-                40% {
-                  top: 31.5%;
-                  left: 3%;
-                }
-
-                60% {
-                  top: 40%;
-                  left: 5%;
-                }
-
-                80% {
-                  top: 38%;
-                  left: 5%;
-                }
-
-                100% {
-                  top: 31.5%;
-                  left: 4.5%;
-                }
-              }
-            </style>
+                0%, 10%, 100% { top: 31.7%; left: 4.5%; }
+                20% { top: 27%; left: 6%; }
+                40% { top: 31.5%; left: 3%; }
+                60% { top: 40%; left: 5%; }
+                80% { top: 38%; left: 5%; }
+            }
+                        </style>
             <div class="eye-container">
               <div class="pupil">
                 <div class="reflection reflection1"></div>
@@ -227,7 +316,8 @@
             </script>
             <!-- <img src="/img/logo2.png" alt="MusterBlick Logo"
               style="height: 120px; width: auto; margin-top: 100px; margin-bottom: 50px;"> -->
-            <p class="lead col-md-7">Ein forschungsbasiertes Förderkonzept zu Musterfolgen für Kinder in der Schuleingangsphase </p>
+            <p class="lead col-md-7">Ein forschungsbasiertes Förderkonzept zu Musterfolgen für Kinder in der
+              Schuleingangsphase </p>
             <a href="#numbers" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">Förderkonzept erscheint Mitte/Ende
               2025</a>
           </div>
@@ -270,19 +360,19 @@
                     <g>
                       <g>
                         <path d="M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219
-                          c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z"/>
+                          c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z" />
                       </g>
                       <g>
                         <path d="M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219
-                          c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z"/>
+                          c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z" />
                       </g>
                       <g>
                         <path d="M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219
-                          c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z"/>
+                          c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z" />
                       </g>
                     </g>
                   </g>
-                                  </svg>
+                </svg>
               </div>
               <div class="col-md-9 flex-fill">
                 <h3 class="h5 my-2">Musterfolgen</h3>
@@ -327,7 +417,8 @@
               </div>
               <div class="col-md-9 flex-fill">
                 <h3 class="h5 my-2">Forschungsbasiert</h3>
-                <p>Um die Wirksamkeit des Förderkonzepts zu untersuchen, werden in MusterBlick unter anderem Eye-Tracking-Daten
+                <p>Um die Wirksamkeit des Förderkonzepts zu untersuchen, werden in MusterBlick unter anderem
+                  Eye-Tracking-Daten
                   erhoben,
                   um die Vorgehensweisen der Kinder vor und nach der Förderung zu untersuchen.</p>
               </div>
@@ -529,11 +620,14 @@
               <p>Institut für Entwicklung und Erforschung des Mathematikunterrichts (IEEM)</p>
               <p>Vogelpothsweg 87, 44227 Dortmund</p>
               <p>Webseite: <a href="https://lukasbaumanns.de" class="text-light">lukasbaumanns.de</a></p>
-              <p>Email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#108;&#117;&#107;&#97;&#115;&#46;&#98;&#97;&#117;&#109;&#97;&#110;&#110;&#115;&#64;&#116;&#117;&#45;&#100;&#111;&#114;&#116;&#109;&#117;&#110;&#100;&#46;&#100;&#101;" class="text-light">&#108;&#117;&#107;&#97;&#115;&#46;&#98;&#97;&#117;&#109;&#97;&#110;&#110;&#115;&#64;&#116;&#117;&#45;&#100;&#111;&#114;&#116;&#109;&#117;&#110;&#100;&#46;&#100;&#101;</a></p>
+              <p>Email: <a
+                  href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#108;&#117;&#107;&#97;&#115;&#46;&#98;&#97;&#117;&#109;&#97;&#110;&#110;&#115;&#64;&#116;&#117;&#45;&#100;&#111;&#114;&#116;&#109;&#117;&#110;&#100;&#46;&#100;&#101;"
+                  class="text-light">&#108;&#117;&#107;&#97;&#115;&#46;&#98;&#97;&#117;&#109;&#97;&#110;&#110;&#115;&#64;&#116;&#117;&#45;&#100;&#111;&#114;&#116;&#109;&#117;&#110;&#100;&#46;&#100;&#101;</a>
+              </p>
               <img src="/img/2023-f.jpeg" class="img-fluid rounded-circle mt-4" width="200">
             </div>
           </div>
-    
+
         </div>
       </div>
     </div>
