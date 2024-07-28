@@ -130,7 +130,7 @@ h4, .h4 {
       font-size: 1.5rem; } }
 
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1.5rem; }
 
 h6, .h6 {
   font-size: 1rem; }
@@ -308,7 +308,7 @@ select {
 
 [list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
   display: none !important; }
-
+  
 button,
 [type="button"],
 [type="reset"],
@@ -534,7 +534,7 @@ progress {
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1300px; } }
+    max-width: 1200px; } }
 
 @media (min-width: 1680px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
@@ -9182,8 +9182,8 @@ img {
   padding-bottom: 12vh; }
 
 .py-vh-6 {
-  padding-top: 16vh;
-  padding-bottom: 16vh; }
+  padding-top: 9vh;
+  padding-bottom: 9vh; }
 
 .transform-scale:hover {
   transform: scale(1.5, 1.5); }
