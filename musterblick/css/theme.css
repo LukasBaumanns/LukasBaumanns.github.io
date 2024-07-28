@@ -534,7 +534,7 @@ progress {
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1140px; } }
+    max-width: 1300px; } }
 
 @media (min-width: 1680px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
@@ -8881,7 +8881,6 @@ textarea.form-control-lg {
   .fs-4 {
     font-size: 1.5rem !important; } }
 
-    
 @media print {
   .d-print-inline {
     display: inline !important; }
