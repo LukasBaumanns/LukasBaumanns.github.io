@@ -135,8 +135,8 @@
 
               .pupil {
                 position: absolute;
-                width: 40px;
-                height: 40px;
+                width: 45px;
+                height: 45px;
                 background-color: black;
                 border-radius: 50%;
                 top: 40%;
@@ -149,8 +149,8 @@
 
               .reflection1 {
                 position: absolute;
-                width: 16px;
-                height: 16px;
+                width: 20px;
+                height: 20px;
                 background-color: white;
                 border-radius: 50%;
                 animation: moveReflection 20s infinite;
@@ -187,21 +187,25 @@
   }
 
   .reflection1 {
-    width: 12px;
-    height: 12px;
     top: 5%;
     left: 10%;
   }
 
   .reflection2 {
-    width: 8px;
-    height: 8px;
     top: 65%;
     left: 65%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 6%; }
+    40% { top: 31.5%; left: 4%; }
+    60% { top: 40%; left: 5%; }
+    80% { top: 38%; left: 7%; }
 }
 
-@media (min-width: 576px) {
+}
+
+@media (max-width: 576px) {
   .eye-container {
     height: 100px;
     margin-top: 80px;
@@ -210,6 +214,9 @@
   }
 
   .pupil {
+    width: 50px;
+    height: 50px;
+
 top: 35%;
     left: 35%;
   }
@@ -223,9 +230,17 @@ top: 35%;
     top: 65%;
     left: 65%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 6%; }
+    40% { top: 31.5%; left: 4%; }
+    60% { top: 40%; left: 5%; }
+    80% { top: 38%; left: 7%; }
 }
 
-@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
   .eye-container {
     height: 110px;
     margin-top: 90px;
@@ -233,6 +248,9 @@ top: 35%;
   }
 
   .pupil {
+    width: 50px;
+    height: 50px;
+
     top: 37%;
     left: 37%;
   }
@@ -246,9 +264,17 @@ top: 35%;
     top: 67%;
     left: 67%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 6%; }
+    40% { top: 31.5%; left: 4%; }
+    60% { top: 40%; left: 5%; }
+    80% { top: 38%; left: 7%; }
 }
 
-@media (min-width: 992px) {
+}
+
+@media (max-width: 992px) {
   .eye-container {
     height: 120px;
     margin-top: 100px;
@@ -256,6 +282,9 @@ top: 35%;
   }
 
   .pupil {
+    width: 50px;
+    height: 50px;
+
     top: 40%;
     left: 40%;
   }
@@ -269,9 +298,17 @@ top: 35%;
     top: 70%;
     left: 70%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 6%; }
+    40% { top: 31.5%; left: 4%; }
+    60% { top: 40%; left: 5%; }
+    80% { top: 38%; left: 7%; }
 }
 
-@media (min-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
   .eye-container {
     height: 130px;
     margin-top: 110px;
@@ -279,6 +316,8 @@ top: 35%;
   }
 
   .pupil {
+    width: 50px;
+    height: 50px;
     top: 42%;
     left: 42%;
   }
@@ -292,9 +331,17 @@ top: 35%;
     top: 72%;
     left: 72%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 6%; }
+    40% { top: 31.5%; left: 4%; }
+    60% { top: 40%; left: 5%; }
+    80% { top: 38%; left: 7%; }
 }
 
-@media (min-width: 1680px) {
+}
+
+@media (max-width: 1680px) {
   .eye-container {
     height: 140px;
     margin-top: 120px;
@@ -302,6 +349,9 @@ top: 35%;
   }
 
   .pupil {
+    width: 50px;
+    height: 50px;
+
     top: 44%;
     left: 44%;
   }
@@ -315,15 +365,23 @@ top: 35%;
     top: 74%;
     left: 74%;
   }
+  @keyframes movePupil {
+    0%, 10%, 100% { top: 31.7%; left: 7%; }
+    20% { top: 27%; left: 8%; }
+    40% { top: 31.5%; left: 5%; }
+    60% { top: 40%; left: 6%; }
+    80% { top: 38%; left: 7%; }
+}
+
 }
 
 
               @keyframes movePupil {
                 0%, 10%, 100% { top: 31.7%; left: 4.5%; }
                 20% { top: 27%; left: 6%; }
-                40% { top: 31.5%; left: 3%; }
+                40% { top: 31.5%; left: 4%; }
                 60% { top: 40%; left: 5%; }
-                80% { top: 38%; left: 5%; }
+                80% { top: 38%; left: 4.5%; }
             }
                         </style>
             <div class="eye-container">
