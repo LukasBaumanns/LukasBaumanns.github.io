@@ -90,6 +90,13 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+  color: rgb(246 206 86 / var(--tw-text-opacity)) !important;
+}
+
 /*
 Add the correct font weight in Edge and Safari.
 */
@@ -1826,6 +1833,7 @@ p{
   content: var(--tw-content);
   width: 100%;
 }
+
 
 /*********************************/
 /*             Helper            */
