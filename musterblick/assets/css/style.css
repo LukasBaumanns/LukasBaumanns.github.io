@@ -19,7 +19,7 @@ File: Main Css File
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: #F0CF6A; /* 2 */
 }
 ::before,
 ::after {
@@ -1877,7 +1877,7 @@ p{
 }
 .hover\:border-primaryDark:hover{
   --tw-border-opacity: 1 !important;
-  border-color: rgb(42 92 235 / var(--tw-border-opacity)) !important;
+  border-color: rgb(245 223 156 / var(--tw-border-opacity)) !important;
 }
 .hover\:border-white:hover{
   --tw-border-opacity: 1 !important;
@@ -1893,7 +1893,7 @@ p{
 }
 .hover\:bg-primaryDark:hover{
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(42 92 235 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(245 223 156 / var(--tw-bg-opacity)) !important;
 }
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1 !important;
