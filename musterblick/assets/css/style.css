@@ -86,6 +86,7 @@ h6 {
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
+/* Link color */
 a {
   color: inherit;
   text-decoration: inherit;
@@ -94,7 +95,7 @@ a {
 a:hover {
   color: inherit;
   text-decoration: inherit;
-  color: rgb(246 206 86 / var(--tw-text-opacity)) !important;
+  color: rgb(245 223 156 / var(--tw-text-opacity)) !important;
 }
 
 /*
