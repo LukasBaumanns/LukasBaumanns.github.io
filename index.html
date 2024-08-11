@@ -136,33 +136,25 @@
                     </ul> -->
 
 
-        <ul class="fa-ul mb-5">
-          <picture>
-            <source media="(min-width: 700px) and (prefers-color-scheme: light)"
-              srcset="/assets/img/forschungsinhalte.png 675w" width="675" height=auto>
-
-            <source media="(min-width: 465px) and (prefers-color-scheme: light)"
-              srcset="/assets/img/forschungsinhalteklein.png 675w" width="422" height=auto>
-
-            <source media="(min-width: 44px) and (prefers-color-scheme: light)"
-              srcset="/assets/img/forschungsinhaltekleinklein.png 675w" width="220" height=auto>
-
-
-
-            <source media="(min-width: 700px) and (prefers-color-scheme: dark)"
-              srcset="/assets/img/forschungsinhalteblack.png 675w" width="675" height=auto>
-
-            <source media="(min-width: 465px) and (prefers-color-scheme: dark)"
-              srcset="/assets/img/forschungsinhaltekleinblack.png 675w" width="422" height=auto>
-
-            <source media="(min-width: 44px) and (prefers-color-scheme: dark)"
-              srcset="/assets/img/forschungsinhaltekleinkleinblack.png 675w" width="220" height=auto>
-
-
-
-            <img alt="alt text" src="https://some.cdn/img/light.jpg"/>
-          </picture>
-
+                    <link rel="preload" href="/assets/img/forschungsinhalte.png" as="image">
+                    <ul class="fa-ul mb-5">
+                      <picture>
+                        <source media="(min-width: 700px) and (prefers-color-scheme: light)"
+                                srcset="/assets/img/forschungsinhalte.png 675w" width="675" height="auto">
+                        <source media="(min-width: 465px) and (prefers-color-scheme: light)"
+                                srcset="/assets/img/forschungsinhalteklein.png 422w" width="422" height="auto">
+                        <source media="(min-width: 44px) and (prefers-color-scheme: light)"
+                                srcset="/assets/img/forschungsinhaltekleinklein.png 220w" width="220" height="auto">
+                        <source media="(min-width: 700px) and (prefers-color-scheme: dark)"
+                                srcset="/assets/img/forschungsinhalteblack.png 675w" width="675" height="auto">
+                        <source media="(min-width: 465px) and (prefers-color-scheme: dark)"
+                                srcset="/assets/img/forschungsinhaltekleinblack.png 422w" width="422" height="auto">
+                        <source media="(min-width: 44px) and (prefers-color-scheme: dark)"
+                                srcset="/assets/img/forschungsinhaltekleinkleinblack.png 220w" width="220" height="auto">
+                        <img alt="alt text" src="https://some.cdn/img/light.jpg" loading="lazy" width="675" height="auto" />
+                      </picture>
+                    </ul>
+                                        
 
         </ul>
         <div class="social-icons">
