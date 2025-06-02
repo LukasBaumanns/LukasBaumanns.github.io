@@ -1558,14 +1558,24 @@
     <!-- Contact Start -->
     <section id="contact" class="py-20">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-                <div class="col-span-1 lg:col-span-1 flex items-center justify-center" data-aos="fade-right">
+            <div class="grid grid-cols-1            <!-- Mobil   -->
+                sm:grid-cols-2              <!-- ≥ 640px -->
+                lg:grid-cols-3              <!-- ≥ 1024px-->
+                gap-6 items-center">
+    
+      <!-- Spacer NUR ab lg -->
+      <div class="hidden lg:block"></div>
+                    <div class="col-span-1 lg:col-span-1 flex items-center justify-center" data-aos="fade-up">
                     <img src="assets/images/2023-f.jpeg"
-                        class="max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md rounded-xl" alt="feature section">
-                </div>
+                    class="max-w-xs        <!-- Basis: 20rem ≈ 320 px -->
+                    sm:max-w-xs    <!-- ab 640 px unverändert -->
+                    md:max-w-sm    <!-- ab 768 px  24rem ≈ 384 px -->
+                    lg:max-w-md    <!-- ab 1024 px 28rem ≈ 448 px -->
+                    w-full rounded-xl"
+             alt="feature section">                </div>
 
-                <div class="col-span-1 lg:col-span-2" data-aos="fade-left">
-                    <div class="lg:ms-5 ms-8">
+                <div class="sm:col-span-2 lg:col-span-2" data-aos="fade-up">
+                    <div class="lg:ms-5">
                         <div>
                             <span
                                 class="text-sm text-primary uppercase font-semibold tracking-wider text-default-950">Kontakt</span>
@@ -1627,29 +1637,8 @@
 
 
 
-                <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-                <div></div>
-                <div class="col-span-1 lg:col-span-1 flex items-center justify-center" data-aos="fade-right">
-                </div>
 
-                <div class="col-span-1 lg:col-span-2" data-aos="fade-left">
-                    <div class="lg:ms-5 ms-8">
-                        <div>
-                            <span
-                                class="text-sm text-primary uppercase font-semibold tracking-wider text-default-950"></span>
-                        </div>
-                        <h2 class="text-3xl md:text-4xl font-semibold text-black mt-4">Teammitglieder</h2>
-
-                        <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start mt-10">
-                            <div>
-                                <h5 class="text-base text-muted font-medium mb-1">Maren Sander</h5>
-                                <h5 class="text-base text-muted font-medium mb-1">Vivien Poetsch</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
+            </div>
 
             </div>
 
