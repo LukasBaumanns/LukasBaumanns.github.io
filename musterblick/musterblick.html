@@ -947,17 +947,24 @@
 
                             <div class="flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden">
                                 <!-- Clickable header + image -->
-                                    <div class="text-center pt-10">
-                                        <h5 class="text-2xl font-semibold text-black">MusterBlick-Kartei</h5>
-                                        <h2 class="text-5xl mt-5 mb-1 items-center align-middle"></h2>
-                                        <a href="assets/files/MusterBlick-Kartei_20250611.pdf"  class="block">
-                                        <img src="assets/images/Kartei.png"
-                                             class="h-28 w-30 mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden"
-                                             alt="MusterBlick-Kartei">
-                                            </a>
-                                    </div>
-                            
-                                <!-- Spacer (kept as in original) -->
+                                <div class="text-center pt-10">
+                                    <h5 class="text-2xl font-semibold text-black">MusterBlick-Kartei</h5>
+                                    <h2 class="text-5xl mt-5 mb-1 items-center align-middle"></h2>
+
+                                    <!-- link wrapper: we put a `group` class on it -->
+                                    <a href="assets/files/MusterBlick-Kartei_20250611.pdf"
+                                       target="_blank"
+                                       class="block mx-auto w-max group">
+                                  
+                                      <!-- image zooms when its parent (the group) is hovered -->
+                                      <img src="assets/images/Kartei.png"
+                                           alt="MusterBlick-Kartei"
+                                           class="h-28 w-auto mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden
+                                                  transition-transform duration-300 ease-in-out
+                                                  group-hover:scale-110" />
+                                    </a>
+                                  </div>
+                                                                  <!-- Spacer (kept as in original) -->
                                 <div class="px-5 py-5 mx-auto"></div>
                             
                                 <!-- Download button -->
@@ -975,9 +982,12 @@
                                     <div class="text-center pt-10">
                                         <h5 class="text-2xl font-semibold text-black">Material zur Kartei</h5>
                                         <h2 class="text-5xl mt-5 mb-1 items-center align-middle"></h2>
-                                        <a href="assets/files/MusterBlick-Material_20250611.pdf" class="block">
+                                        <a href="assets/files/MusterBlick-Material_20250611.pdf" target="_blank"
+                                        class="block mx-auto w-max group">
                                         <img src="assets/images/Material.png"
-                                             class="h-28 w-30 mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden"
+                                             class="h-28 w-auto mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden
+                                             transition-transform duration-300 ease-in-out
+                                             group-hover:scale-110"
                                              alt="MusterBlick Sprachspeicher">
                                             </a>
                                     </div>
@@ -1003,9 +1013,12 @@
                                     <div class="text-center pt-10">
                                         <h5 class="text-2xl font-semibold text-black">Sprachspeicher</h5>
                                         <h2 class="text-5xl mt-5 mb-1 items-center align-middle"></h2>
-                                        <a href="assets/files/MusterBlick_Sprachspeicher_20250611.pdf" class="block">
+                                        <a href="assets/files/MusterBlick_Sprachspeicher_20250611.pdf" target="_blank"
+                                        class="block mx-auto w-max group">
                                         <img src="assets/images/Sprachspeicher.png"
-                                             class="h-28 w-30 mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden"
+                                             class="h-28 w-auto mx-auto flex flex-col shadow-2xl rounded-xl bg-white overflow-hidden
+                                             transition-transform duration-300 ease-in-out
+                                             group-hover:scale-110"
                                              alt="MusterBlick Sprachspeicher">
                                             </a>
                                     </div>
