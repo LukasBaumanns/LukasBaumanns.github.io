@@ -13097,7 +13097,7 @@ input:checked + .slider:before {
     color: white;
     border: 1px solid var(--bs-primaryhoverdark) !important;
   }
-
+{}
 
   /* Hover color, die stehen bleibt, wenn man auf einen button klickt */
   .active1 {
