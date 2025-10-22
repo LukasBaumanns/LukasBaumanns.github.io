@@ -37,6 +37,8 @@
   --bs-gray-900: #212529;
   /* --bs-primary: var(--bs-primary); Hauptfarbe in Blau */
   --bs-primary: #004c93; /* Farbe in Essen */
+  --bs-primarygelb: #efe4bf; /* Farbe in Essen */
+  --bs-primaryhellblau: #dfe4f2; /* Farbe in Essen */
   /*Hauptfarbe in Blau Neu :3 D 6 1 9 8 Köln/Freiburg: 6 7 7 C 9 8 ; Dortmund: 8 3 B 8 1 9 oder dunkler : 6 3 9 B 0 0; R color scheme blue: 0 0 7 3 C3*/
   --bs-primarydark: #93B3F3;
   /*Hauptfarbe in Blau Köln/Freiburg: 6 7 7 C 9 8 ; Dortmund: 8 3 B 8 1 9 oder dunkler : 6 3 9 B 0 0; R color scheme blue: 0 0 7 3 C3*/
