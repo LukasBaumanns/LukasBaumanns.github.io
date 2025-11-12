@@ -1530,6 +1530,35 @@
         white-space: nowrap;
       }
 
+      /* Make the table area vertically scrollable once it gets tall */
+.table-wrap {
+  max-height: 28rem;       /* tweak to taste (px, rem, or vh) */
+  overflow: auto;          /* both axes; or use overflow-y:auto */
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+  scrollbar-gutter: stable;           /* avoids layout shift */
+  overscroll-behavior: contain;       /* nicer scrolling */
+}
+
+/* Sticky header works best with separate borders */
+.teaching-table {
+  width: 100%;
+  border-collapse: separate;  /* was collapse; this helps sticky in some browsers */
+  border-spacing: 0;
+}
+
+.teaching-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fafafa;        /* ensure header isn’t transparent when stuck */
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  text-align: left;
+  padding: .75rem .9rem;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
       @media (max-width: 900px) {
         .teaching-stats {
           grid-template-columns: repeat(2, minmax(0, 1fr));
