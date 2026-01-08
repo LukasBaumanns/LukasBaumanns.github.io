@@ -12343,6 +12343,52 @@ p.lead {
   outline-color: #d48a6e;
 }
 
+
+/* Bearbeitung meines Profilbildes */
+.profile-wrap{
+  position: relative;
+  display: inline-block;
+  width: 170px;          /* ggf. an dein Layout anpassen */
+  height: 170px;         /* muss = width sein */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--bs-primarygelb);
+}
+
+/* falls das Foto nicht exakt quadratisch ist: sauberer Kreis-Crop */
+.profile-wrap > img{
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;     /* modern: erzwingt quadratisch */
+  object-fit: cover;        /* füllt den Kreis ohne Verzerrung */
+    object-position: 50% 50%; /* zentriert den Bildausschnitt */
+  border-radius: 50%;
+}
+
+/* Copyright-Hinweis sehr dezent, erst bei Hover/Focus sichtbar */
+.profile-credit{
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.8);
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none; /* blockiert keine Klicks */
+}
+
+/* sichtbar bei Hover oder wenn der Bereich fokussiert ist */
+.profile-wrap:hover .profile-credit,
+.profile-wrap:focus-within .profile-credit{
+  opacity: 1;
+}
+
 @media (min-width: 992px) {
   #sideNav {
     padding-left: 0;
