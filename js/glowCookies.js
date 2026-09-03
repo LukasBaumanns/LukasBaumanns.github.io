@@ -18,6 +18,8 @@ class GlowCookies {
     this.PreBanner = undefined
     this.Cookies = undefined
     this.DOMbanner = undefined
+    this.trackingActive = false
+    this.consentVersion = "2026-09-03"
   }
 
   render() {
@@ -29,7 +31,7 @@ class GlowCookies {
   addCss() {
     const stylesheet = document.createElement('link');
     stylesheet.setAttribute('rel', 'stylesheet');
-    stylesheet.setAttribute('href', `https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.3/src/glowCookies.min.css`);
+    stylesheet.setAttribute('href', 'css/glowCookies.css?v=2026-09-03');
     document.head.appendChild(stylesheet);
   }
 
@@ -49,13 +51,16 @@ class GlowCookies {
                                     id="glowCookies-banner" 
                                     class="glowCookies__banner glowCookies__banner__${this.config.bannerStyle} glowCookies__${this.config.border} glowCookies__${this.config.position}"
                                     style="background-color: ${this.banner.background};"
+                                    role="dialog"
+                                    aria-labelledby="glowCookies-heading"
+                                    aria-describedby="glowCookies-description"
+                                    tabindex="-1"
                                 >
-                                    <h3 style="color: ${this.banner.color};">${this.banner.heading}</h3>
-                                    <p style="color: ${this.banner.color};">
+                                    <h3 id="glowCookies-heading" style="color: ${this.banner.color};">${this.banner.heading}</h3>
+                                    <p id="glowCookies-description" style="color: ${this.banner.color};">
                                         ${this.banner.description} 
                                         <a 
                                             href="${this.banner.link}"
-                                            target="_blank" 
                                             class="read__more"
                                             style="color: ${this.banner.color};"
                                         >
@@ -83,6 +88,14 @@ class GlowCookies {
   }
 
   checkStatus() {
+    if (localStorage.getItem("GlowCookiesVersion") !== this.consentVersion) {
+      localStorage.removeItem("GlowCookies")
+      localStorage.removeItem("GlowCookiesVersion")
+      this.disableTracking()
+      this.openSelector()
+      return
+    }
+
     switch (localStorage.getItem("GlowCookies")) {
       case "1":
         this.openManageCookies();
@@ -91,44 +104,80 @@ class GlowCookies {
         break;
       case "0":
         this.openManageCookies();
+        this.disableTracking();
         break;
       default:
         this.openSelector();
     }
   }
 
-  openManageCookies() {
+  openManageCookies(moveFocus = false) {
     this.PreBanner.style.display = this.config.hideAfterClick ? "none" : "block"
     this.DOMbanner.classList.remove('glowCookies__show')
+
+    if (moveFocus && !this.config.hideAfterClick) {
+      document.getElementById('prebannerBtn').focus()
+    }
   }
 
   openSelector() {
     this.PreBanner.style.display = "none";
     this.DOMbanner.classList.add('glowCookies__show')
+    window.requestAnimationFrame(() => this.DOMbanner.focus())
   }
 
   acceptCookies() {
+    if (localStorage.getItem("GlowCookies") === "1" &&
+        localStorage.getItem("GlowCookiesVersion") === this.consentVersion) {
+      this.openManageCookies(true)
+      return
+    }
+
     localStorage.setItem("GlowCookies", "1")
-    this.openManageCookies()
+    localStorage.setItem("GlowCookiesVersion", this.consentVersion)
+    this.openManageCookies(true)
     this.activateTracking()
     this.addCustomScript()
   }
 
   rejectCookies() {
+    const trackingWasActive = localStorage.getItem("GlowCookies") === "1"
+
     localStorage.setItem("GlowCookies", "0");
-    this.openManageCookies();
+    localStorage.setItem("GlowCookiesVersion", this.consentVersion)
+    this.openManageCookies(true);
     this.disableTracking();
+
+    if (trackingWasActive) {
+      window.location.reload()
+    }
   }
 
   activateTracking() {
+    if (this.trackingActive) return
+    this.trackingActive = true
+
     // Google Analytics Tracking
     if (this.tracking.AnalyticsCode) {
+      window[`ga-disable-${this.tracking.AnalyticsCode}`] = false
       let Analytics = document.createElement('script');
+      Analytics.setAttribute('id', 'glowCookies-google-analytics')
+      Analytics.setAttribute('async', '')
       Analytics.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${this.tracking.AnalyticsCode}`);
       document.head.appendChild(Analytics);
       let AnalyticsData = document.createElement('script');
+      AnalyticsData.setAttribute('id', 'glowCookies-google-analytics-config')
       AnalyticsData.text = `window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
+                                gtag('consent', 'default', {
+                                  'analytics_storage': 'denied',
+                                  'ad_storage': 'denied',
+                                  'ad_user_data': 'denied',
+                                  'ad_personalization': 'denied'
+                                });
+                                gtag('consent', 'update', {
+                                  'analytics_storage': 'granted'
+                                });
                                 gtag('js', new Date());
                                 gtag('config', '${this.tracking.AnalyticsCode}');`;
       document.head.appendChild(AnalyticsData);
@@ -176,41 +225,43 @@ class GlowCookies {
   }
 
   disableTracking() {
-    // Google Analytics Tracking ('client_storage': 'none')
     if (this.tracking.AnalyticsCode) {
-      let Analytics = document.createElement('script');
-      Analytics.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${this.tracking.AnalyticsCode}`);
-      document.head.appendChild(Analytics);
-      let AnalyticsData = document.createElement('script');
-      AnalyticsData.text = `window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', '${this.tracking.AnalyticsCode}' , {
-                            'client_storage': 'none',
-                            'anonymize_ip': true
-                        });`;
-      document.head.appendChild(AnalyticsData);
+      window[`ga-disable-${this.tracking.AnalyticsCode}`] = true
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        })
+      }
     }
 
-    // Clear cookies - not working 100%
+    if (typeof window.fbq === 'function') {
+      window.fbq('consent', 'revoke')
+    }
+
+    this.trackingActive = false
     this.clearCookies()
   }
 
   clearCookies() {
-    let cookies = document.cookie.split("; ");
-    for (let c = 0; c < cookies.length; c++) {
-      let d = window.location.hostname.split(".");
-      while (d.length > 0) {
-        let cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
-        let p = location.pathname.split('/');
-        document.cookie = cookieBase + '/';
-        while (p.length > 0) {
-          document.cookie = cookieBase + p.join('/');
-          p.pop();
-        };
-        d.shift();
-      }
-    }
+    const trackingCookiePattern = /^(_ga|_gid|_gat|_gcl|_fbp|_fbc)/
+    const cookieNames = document.cookie
+      .split(';')
+      .map(cookie => cookie.split('=')[0].trim())
+      .filter(name => trackingCookiePattern.test(name))
+    const host = window.location.hostname
+    const parentDomain = host.split('.').slice(-2).join('.')
+    const domains = ['', host, `.${host}`, parentDomain, `.${parentDomain}`]
+
+    cookieNames.forEach(name => {
+      domains.forEach(domain => {
+        const domainAttribute = domain ? `; domain=${domain}` : ''
+        document.cookie = `${encodeURIComponent(name)}=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domainAttribute}; SameSite=Lax`
+      })
+    })
   }
 
   addCustomScript() {

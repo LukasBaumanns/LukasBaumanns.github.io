@@ -27,7 +27,7 @@
   position: fixed;
   width: auto;
   max-width: 375px;
-  z-index: 999;
+  z-index: 3000;
   -webkit-box-shadow: 0 .625em 1.875em rgba(2,2,3,.2);
   -moz-box-shadow: 0 .625em 1.875em rgba(2,2,3,.2);
   box-shadow: 0 .625em 1.875em rgba(2,2,3,.2);
@@ -59,10 +59,18 @@
 }
 
 .glowCookies__banner .btn__section button:focus {
-  outline: none;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #1d2e38;
   transform: scale(0.95);
   -webkit-filter: contrast(75%);
   filter: contrast(75%);
+}
+
+.glowCookies__banner .read__more:focus-visible,
+.prebanner:focus-visible {
+  outline: 3px solid #1d2e38;
+  outline-offset: 3px;
 }
 
 .glowCookies__banner .btn__section button:hover {
@@ -262,7 +270,7 @@
 .prebanner {
   position: fixed;
   bottom: 15px;
-  z-index: 999;
+  z-index: 3000;
   min-height: 50px;
   min-width: 125px;
   cursor: pointer;
@@ -277,6 +285,10 @@
   -webkit-box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
   -moz-box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
   box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
+}
+
+.prebanner.glowCookies__right {
+  right: 85px;
 }
 
 .prebanner__border__1 {
@@ -302,4 +314,3 @@
 .prebanner:hover {
   text-decoration: none;
 }
-
