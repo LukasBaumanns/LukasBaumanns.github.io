@@ -268,31 +268,39 @@
 /* Prebanner styles */
 /* =========================== */
 .prebanner {
-  position: fixed;
-  bottom: 15px;
+  position: static;
+  float: right;
+  margin: 15px 85px 20px 20px;
   z-index: 3000;
-  min-height: 50px;
-  min-width: 125px;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  min-width: 44px;
   cursor: pointer;
   font-family: inherit;
-  font-size: 15px;
-  font-weight: bolder;
-  line-height: normal;
   border: none;
-  padding: 12px 18px;
+  padding: 10px;
   text-decoration: none;
   user-select: none;
+  opacity: .55;
   -webkit-box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
   -moz-box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
   box-shadow: 0 .625em 1.875em rgba(2,2,3,.1);
 }
 
+.prebanner svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0 auto;
+}
+
 .prebanner.glowCookies__right {
-  right: 85px;
+  right: auto;
 }
 
 .prebanner__border__1 {
-  border-radius: 15px;
+  border-radius: 50%;
 }
 
 .prebanner__border__2 {
@@ -311,6 +319,8 @@
   transform: scale(.97);
 }
 
-.prebanner:hover {
+.prebanner:hover,
+.prebanner:focus-visible {
+  opacity: 1;
   text-decoration: none;
 }

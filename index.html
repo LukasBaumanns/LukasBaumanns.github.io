@@ -39,8 +39,7 @@
       acceptBtnText: "Akzeptieren",
       rejectBtnBackground: "#3d6198",
       rejectBtnColor: "#fff",
-      rejectBtnText: "Ablehnen",
-      manageText: "Cookie-Einstellungen"
+      rejectBtnText: "Ablehnen"
     })
   </script>
 
@@ -4794,7 +4793,7 @@ data-type:"9. Sonstige Publikationen" -->
     </script>
 
   </p>
-  <p>Stand: Januar 2026</p>
+  <p>Stand: September 2026</p>
 </div>
 
 <button class="accordion" id="datenschutz">Datenschutzerklärung</button>
@@ -4893,19 +4892,6 @@ data-type:"9. Sonstige Publikationen" -->
     });
   }
 
-  function openPrivacyNotice() {
-    if (window.location.hash !== "#datenschutz") return;
-
-    var privacyButton = document.getElementById("datenschutz");
-    var privacyPanel = privacyButton && privacyButton.nextElementSibling;
-    if (privacyButton && privacyPanel) {
-      privacyButton.classList.add("active");
-      privacyPanel.style.display = "block";
-    }
-  }
-
-  window.addEventListener("hashchange", openPrivacyNotice);
-  openPrivacyNotice();
 </script>
 
 
