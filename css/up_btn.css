@@ -84,6 +84,7 @@
 }
 
 .up-btn.up-btn__hide {
+  visibility: hidden;
   opacity: 0;
   transform: scale(0);
   transition: all .2s ease-in-out;

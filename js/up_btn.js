@@ -4,7 +4,10 @@
 // up button
 // ===============================================
  function up(set) {
-  const upBtn = document.createElement('div');
+  const upBtn = document.createElement('button');
+  upBtn.type = 'button';
+  upBtn.setAttribute('aria-label', 'Zum Seitenanfang');
+  upBtn.tabIndex = -1;
   let upBtnImg;
 
   upBtn.classList.add('up-btn', 'up-btn__hide');
@@ -12,8 +15,10 @@
   function showBtn(num) {
     if (document.documentElement.scrollTop >= num) {
       upBtn.classList.remove('up-btn__hide');
+      upBtn.tabIndex = 0;
     } else {
       upBtn.classList.add('up-btn__hide');
+      upBtn.tabIndex = -1;
     }
   }
 
@@ -74,7 +79,7 @@
   upBtn.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
     });
   });
 

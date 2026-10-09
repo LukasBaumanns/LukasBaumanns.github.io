@@ -13264,3 +13264,39 @@ hr {
 
 
 
+
+/* Accessible controls and disclosures on the home page. */
+[hidden] { display: none !important; }
+.video-wrapper { aspect-ratio: 16 / 9; }
+.video-start {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.video-wrapper .video-start img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-wrapper iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-start:focus-visible, .up-btn:focus-visible, .accordion:focus-visible,
+.button:focus-visible, .social-icon:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+.up-btn:focus-visible { outline-color: var(--bs-primary); }
+.research-overview img { max-width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .up-btn, .chevron { transition: none !important; }
+}
+/* Let project headers and media fit narrow viewports without clipping content. */
+#projects .card-head { flex-wrap: wrap; }
+#news img, #news video { max-width: 100%; height: auto; }
+.resume-section-content { min-width: 0; }
+@media (max-width: 375px) {
+  h1 { font-size: 2.5rem; line-height: 1.1; }
+}
+.resume-section-content { overflow-wrap: anywhere; }
+.accordion { overflow-wrap: anywhere; white-space: normal; }
