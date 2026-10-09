@@ -3804,7 +3804,7 @@ data-type:"9. Sonstige Publikationen" -->
 
 
 
-    <!-- Presentations-->
+ <!-- Presentations-->
     <section class="resume-section" id="presentations">
       <div class="resume-section-content">
         <h2 class="mb-5">Vorträge</h2>
@@ -3843,12 +3843,12 @@ data-type:"9. Sonstige Publikationen" -->
               <!-- Video 1 -->
               <div class="video">
                 <div class="video-wrapper" data-video-id="9BnxGc5obn4">
-                  <img src="https://img.youtube.com/vi/9BnxGc5obn4/hqdefault.jpg" alt="Vortragsvorschau">
+                  <img src="https://img.youtube.com/vi/9BnxGc5obn4/hqdefault.jpg" alt="ChatGPT">
                   <div class="play-button"></div>
                 </div>
                 <div class="subheading mb-auto">Wie lässt sich der Musterblick fördern? Eine Eye-Tracking-Studie zu
                   einem Förderkonzept zu Musterfolgen bei Erstklässler*innen mit Unterstützungsbedarf</div>
-                <p>Vortrag auf der 58. Jahrestagung der Gesellschaft für Didaktik der Mathematik (GDM), Saarbrücken,
+                <p>Vortrag auf der 59. Jahrestagung der Gesellschaft für Didaktik der Mathematik (GDM), Saarbrücken,
                   März 2025</p>
               </div>
 
@@ -3856,7 +3856,7 @@ data-type:"9. Sonstige Publikationen" -->
               <!-- Video 1 -->
               <div class="video">
                 <div class="video-wrapper" data-video-id="IMXvzBkpxgU">
-                  <img src="https://img.youtube.com/vi/IMXvzBkpxgU/hqdefault.jpg" alt="Vortragsvorschau">
+                  <img src="https://img.youtube.com/vi/IMXvzBkpxgU/hqdefault.jpg" alt="ChatGPT">
                   <div class="play-button"></div>
                 </div>
                 <div class="subheading mb-auto">Leveraging ChatGPT for problem posing. An exploratory study of
@@ -3874,7 +3874,7 @@ data-type:"9. Sonstige Publikationen" -->
                 </div>
                 <div class="subheading mb-auto">Musterfolgeaufgaben lösen: Eine Eye-Tracking Studie zu Vorgehensweisen
                   und Fehlern von Erstklässler*innen mit Schwierigkeiten beim Mathematiklernen</div>
-                <p>Vortrag auf der 57. Jahrestagung der Gesellschaft für Didaktik der Mathematik (GDM), Essen, März 2024
+                <p>Vortrag auf der 58. Jahrestagung der Gesellschaft für Didaktik der Mathematik (GDM), Essen, März 2024
                 </p>
               </div>
 
@@ -3993,7 +3993,7 @@ data-type:"9. Sonstige Publikationen" -->
       .collapsible-grid {
         grid-column: 1 / -1;
         display: grid;
-        grid-template-columns: var(--grid-cols, repeat(auto-fit, minmax(min(100%, 300px), 1fr)));
+        grid-template-columns: var(--grid-cols, repeat(auto-fit, minmax(300px, 1fr)));
         gap: var(--grid-gap, 1.25rem);
         overflow: hidden;
         /* für die max-height-Animation */
@@ -4036,7 +4036,22 @@ data-type:"9. Sonstige Publikationen" -->
       }
     </style>
 
-
+    <script>
+      document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+        wrapper.addEventListener('click', function () {
+          const videoId = this.getAttribute('data-video-id');
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          this.innerHTML = '';
+          this.appendChild(iframe);
+        });
+      });
+    </script>
 
 
 
