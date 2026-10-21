@@ -29,6 +29,7 @@ class GlowCookies {
   }
 
   addCss() {
+    if (document.querySelector('link[data-glow-cookies-css]')) return;
     const stylesheet = document.createElement('link');
     stylesheet.setAttribute('rel', 'stylesheet');
     stylesheet.setAttribute('href', 'css/glowCookies.css?v=2026-09-04');
@@ -122,14 +123,14 @@ class GlowCookies {
     this.DOMbanner.classList.remove('glowCookies__show')
 
     if (moveFocus && !this.config.hideAfterClick) {
-      document.getElementById('prebannerBtn').focus()
+      document.getElementById('prebannerBtn').focus({ preventScroll: true })
     }
   }
 
   openSelector() {
     this.PreBanner.style.display = "none";
     this.DOMbanner.classList.add('glowCookies__show')
-    window.requestAnimationFrame(() => this.DOMbanner.focus())
+    window.requestAnimationFrame(() => this.DOMbanner.focus({ preventScroll: true }))
   }
 
   acceptCookies() {

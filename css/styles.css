@@ -13300,3 +13300,9 @@ hr {
 }
 .resume-section-content { overflow-wrap: anywhere; }
 .accordion { overflow-wrap: anywhere; white-space: normal; }
+
+/* Reserve the art-directed research graphic's space before it downloads. */
+.research-overview img { width: 220px; }
+@media (min-width: 465px) { .research-overview img { width: 422px; } }
+@media (min-width: 700px) { .research-overview img { width: 675px; } }
+#projects picture img { max-width: 100%; height: auto; }
