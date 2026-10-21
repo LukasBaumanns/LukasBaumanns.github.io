@@ -44,7 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
             player.tabIndex = 0;
             wrapper.replaceChildren(player);
             player.focus();
-        }, { once: true });
+        });
+        const details = wrapper.closest('.news-details');
+        details?.addEventListener('toggle', () => {
+            if (!details.open && wrapper.querySelector('iframe')) wrapper.replaceChildren(button);
+        });
+    });
+    document.querySelectorAll('.news-details').forEach(details => {
+        details.addEventListener('toggle', () => {
+            if (!details.open) details.querySelectorAll('video').forEach(video => video.pause());
+        });
     });
 
     // Hidden removes closed content from tab order and the accessibility tree.
@@ -62,15 +71,24 @@ window.addEventListener('DOMContentLoaded', () => {
         button.setAttribute('aria-controls', extra.id);
         const setOpen = open => {
             if (!open && extra.contains(document.activeElement)) button.focus();
+            if (!open && buttonId === 'news-toggle') {
+                extra.querySelectorAll('details[open]').forEach(details => { details.open = false; });
+            }
             extra.hidden = !open;
             button.setAttribute('aria-expanded', String(open));
             button.querySelector('.label').textContent = open ? 'Weniger anzeigen' : closedLabel;
         };
         setOpen(false);
         button.hidden = false;
-        button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+        button.addEventListener('click', () => {
+            const closing = button.getAttribute('aria-expanded') === 'true';
+            setOpen(!closing);
+            if (closing && buttonId === 'news-toggle' && button.getBoundingClientRect().top < 80) {
+                button.scrollIntoView({ block: 'center', behavior: 'instant' });
+            }
+        });
     }
-    setupDisclosure('news-list', 'news-toggle', 'news', 'news-collapsible', 'Weitere News');
+    setupDisclosure('news-list', 'news-toggle', 'news', 'news-collapsible', 'Ältere Meldungen anzeigen');
     setupDisclosure('presentations-list', 'presentations-toggle', 'video', 'collapsible-grid', 'Weitere Vorträge');
 
     document.querySelectorAll('.accordion[aria-controls]').forEach(button => {
